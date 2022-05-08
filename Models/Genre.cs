@@ -1,0 +1,76 @@
+﻿namespace Models;
+
+// Inspired by https://en.wikipedia.org/wiki/List_of_video_game_genres
+public enum Genre
+{
+    OTHER,
+
+    ACTION,
+    PLATFORMER,
+    SHOOTER,
+    RAIL_SHOOTER,
+    FIGHTING,
+    BEAT_EM_UP,
+    STEALTH,
+    SURVIVAL,
+    RHYTHM,
+    BATTLE_ROYALE,
+    FPS,
+
+    ACTION_ADVENTURE,
+    SURVIVAL_HORROR,
+    METROIDVANIA,
+    
+    ADVENTURE,
+    TEXT_ADVENTURE,
+    GRAPHIC_ADVENTURE,
+    VISAUAL_NOVEL,
+    INTERACTIVE_MOVIE,
+    ADVENTURE_3D, 
+    
+    PUZZLE,
+    LOGICAL_PUZZLE,
+    PHSYICS_PUZZLE,
+    CODING_PUZZLE,
+    PLATFORM_PUZZLE,
+    HIDDEN_OBJECT_PUZZLE, // DE = Wimmelbild
+    
+    RPG,
+    ACTION_RPG,
+    MMORPG,
+    ROGUE_LIKE,
+    ROGUE_LITE,
+    FIRST_PERSON_RPG,
+    DONGEON_CRAWLER,
+    JRPG,
+    MONSTER_TAMER,
+
+    SIMULATION,
+    RACING_SIMULATION,
+    FLIGHT_SIMUATION,
+    LIFE_SIMULATION,
+    SPACE_SIMULATION,
+    TRAIN_SIMULATION,
+    
+    STRATEGY,
+    STRATEGY_4X,
+    MOBA,
+    REALTIME_STRATEGY,
+    REALTIME_TACTICS,
+    TOWER_DEFENSE,
+    TURNBASED_STRATEGY,
+    TURNBASED_TACTICS,
+    WARGAME,
+    GRAND_STRAGEY,
+    
+    SPORTS,
+    RACING,
+    
+    MMO,
+    
+    BOARD_GAME,
+    CASUAL,
+    CARD_GAME,
+    COLLECTIBLE_CARD_GAME,
+    PARTY_GAME,    
+}

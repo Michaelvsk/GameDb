@@ -1,0 +1,56 @@
+﻿namespace Models;
+
+public enum Platform
+{
+    OTHER,
+    
+    PC_DOS,
+    PC_WINDOWS,
+    PC_STEAM,
+    PC_GOG,
+    PC_EPIC,
+    PC_UBISOFT,
+    PC_ORIGIN,
+    PC_ROCKSTAR,
+    PC_HUMBLESTORE,
+    PC_LINUX,
+    PC_MAC,
+    
+    NINTENDO_NES,
+    NINTENDO_SNES,
+    NINTENDO_N64,
+    NINTENDO_GC,
+    NINTENDO_WII,
+    NINTENDO_WIIU,
+    NINTENDO_SWITCH,
+    
+    NINTENDO_GB,
+    NINTENDO_GBC,
+    NINTENDO_GBA,
+    NINTENDO_DS,
+    NINTENDO_3DS,
+    
+    MICROSOFT_XBOX,
+    MICROSOFT_XBOX360,
+    MICROSOFT_XBOXONE,
+    MICROSOFT_XBOXSERIES,
+
+    SONY_PS1,
+    SONY_PS2,
+    SONY_PS3,
+    SONY_PS4,
+    SONY_PS5,
+
+    SONY_PSP,
+    SONY_PSVITA,
+
+    SEGA_SG1000,
+    SEGA_MASTERSYSTEM,
+    SEGA_MEGADRIVE, // Genesis (US)
+    SEGA_MEGACD,
+    SEGA_SATURN,
+    SEGA_DREAMCAST,
+    
+    SEGA_GAMEGEAR,
+    SEGA_NOMAND,
+}

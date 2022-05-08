@@ -5,6 +5,13 @@ VisualStudioVersion = 17.0.31611.283
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GameDb", "GameDb\GameDb.csproj", "{02B26038-0592-44CD-A286-60403997F3BE}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Models", "Models\Models.csproj", "{06EC9675-DC85-418F-A0B8-1DB30F0E3EAE}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{955961FA-B782-473F-B861-409AEA7B170A}"
+	ProjectSection(SolutionItems) = preProject
+		.editorconfig = .editorconfig
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -17,6 +24,10 @@ Global
 		{02B26038-0592-44CD-A286-60403997F3BE}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{02B26038-0592-44CD-A286-60403997F3BE}.Release|Any CPU.Build.0 = Release|Any CPU
 		{02B26038-0592-44CD-A286-60403997F3BE}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{06EC9675-DC85-418F-A0B8-1DB30F0E3EAE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{06EC9675-DC85-418F-A0B8-1DB30F0E3EAE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{06EC9675-DC85-418F-A0B8-1DB30F0E3EAE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{06EC9675-DC85-418F-A0B8-1DB30F0E3EAE}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
