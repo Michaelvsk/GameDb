@@ -1,4 +1,4 @@
-﻿namespace GameDb;
+﻿namespace Michaelvsk.GameDb;
 
 public partial class App : Application
 {

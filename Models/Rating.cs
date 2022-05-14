@@ -1,4 +1,4 @@
-﻿namespace Models;
+﻿namespace Michaelvsk.GameDb.Models;
 public enum Rating
 {
     NotRated = -1,

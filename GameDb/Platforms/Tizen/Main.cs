@@ -1,8 +1,8 @@
-using System;
+﻿using System;
 using Microsoft.Maui;
 using Microsoft.Maui.Hosting;
 
-namespace GameDb;
+namespace Michaelvsk.GameDb.Platforms.Tizen;
 
 class Program : MauiApplication
 {

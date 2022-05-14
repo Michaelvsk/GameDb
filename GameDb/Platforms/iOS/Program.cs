@@ -1,4 +1,7 @@
-﻿using ObjCRuntime;
+﻿using Michaelvsk.GameDb.Platforms.iOS;
+
+using ObjCRuntime;
+
 using UIKit;
 
 namespace GameDb;

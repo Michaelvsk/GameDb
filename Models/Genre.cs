@@ -1,4 +1,4 @@
-﻿namespace Models;
+﻿namespace Michaelvsk.GameDb.Models;
 
 // Inspired by https://en.wikipedia.org/wiki/List_of_video_game_genres
 public enum Genre
