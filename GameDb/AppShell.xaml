@@ -8,7 +8,7 @@
 
     <ShellContent
         Title="Game DB"
-        ContentTemplate="{DataTemplate local:MainPage}"
-        Route="MainPage" />
+        ContentTemplate="{DataTemplate local:GameList}"
+        Route="GameList" />
 
 </Shell>

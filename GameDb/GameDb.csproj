@@ -53,4 +53,10 @@
 	  <ProjectReference Include="..\Models\Models.csproj" />
 	</ItemGroup>
 
+	<ItemGroup>
+	  <Compile Update="GameList.xaml.cs">
+	    <DependentUpon>GameList.xaml</DependentUpon>
+	  </Compile>
+	</ItemGroup>
+
 </Project>
