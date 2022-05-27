@@ -1,6 +1,6 @@
 ﻿namespace Michaelvsk.GameDb.Models;
 
-public class GameItem : BaseItem
+public class Game : BaseItem
 {
     public string Title { get; set; } = string.Empty;
 

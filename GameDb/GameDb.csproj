@@ -50,7 +50,8 @@
 	</ItemGroup>
 
 	<ItemGroup>
-	  <ProjectReference Include="..\Models\Models.csproj" />
+	  <ProjectReference Include="..\GameDb.Core\GameDb.Core.csproj" />
+	  <ProjectReference Include="..\GameDb.Models\GameDb.Models.csproj" />
 	</ItemGroup>
 
 	<ItemGroup>

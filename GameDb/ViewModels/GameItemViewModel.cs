@@ -5,14 +5,14 @@ namespace Michaelvsk.GameDb.ViewModels;
 internal class GameItemViewModel : BaseViewModel
 {
     
-    public GameItem game { get; set; }
+    public Game game { get; set; }
 
     public GameItemViewModel()
     {
-        game = new GameItem();
+        game = new Game();
     }
 
-    public GameItemViewModel(GameItem game)
+    public GameItemViewModel(Game game)
     {
         this.game = game;
     }
