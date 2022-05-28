@@ -1,6 +1,4 @@
-﻿using Michaelvsk.GameDb.Models;
-
-namespace Michaelvsk.GameDb.Core.DataAccess;
+﻿namespace Michaelvsk.GameDb.Models.DataAccess;
 
 interface IGameRepository
 {
