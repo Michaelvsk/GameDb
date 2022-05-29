@@ -1,7 +1,7 @@
 ﻿namespace Michaelvsk.GameDb.Models.DataAccess;
 
-interface IGameRepository
+public interface IGameRepository
 {
-    IList<Game> GetGames();
-    Game GetGame(Guid Id);
+    Task<List<Game>> GetGamesAsync();
+    Game? GetGame(Guid Id);
 }

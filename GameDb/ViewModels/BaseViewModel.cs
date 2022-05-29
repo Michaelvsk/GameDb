@@ -3,7 +3,7 @@ using System.Runtime.CompilerServices;
 
 namespace Michaelvsk.GameDb.ViewModels;
 
-internal class BaseViewModel : INotifyPropertyChanged
+public class BaseViewModel : INotifyPropertyChanged
 {
     bool isBusy = false;
     public bool IsBusy

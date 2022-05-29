@@ -2,16 +2,20 @@
 using System.Diagnostics;
 
 using Michaelvsk.GameDb.Models;
+using Michaelvsk.GameDb.Models.DataAccess;
 
 namespace Michaelvsk.GameDb.ViewModels;
-internal class GamesViewModel : BaseViewModel
+public class GameListViewModel : BaseViewModel
 {
     public ObservableCollection<Game> Games { get; set; }
 
     public Command LoadItemsCommand { get; set; }
 
-    public GamesViewModel()
+    IGameRepository _gameRepo;
+
+    public GameListViewModel(IGameRepository gameRepository)
     {
+        _gameRepo = gameRepository;
         Title = "Browse";
         Games = new ObservableCollection<Game>();
 
@@ -28,11 +32,11 @@ internal class GamesViewModel : BaseViewModel
         try
         {
             Games.Clear();
-            //var notes = await PluralsightDataStore.GetNotesAsync();
-            //foreach (var note in notes)
-            //{
-            //    Games.Add(note);
-            //}
+            var notes = await _gameRepo.GetGamesAsync();
+            foreach (var note in notes)
+            {
+                Games.Add(note);
+            }
         }
         catch (Exception ex)
         {
