@@ -10,5 +10,4 @@
         Title="Game DB"
         ContentTemplate="{DataTemplate local:GameList}"
         Route="GameList" />
-
 </Shell>

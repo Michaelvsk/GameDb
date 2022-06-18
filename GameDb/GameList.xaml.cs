@@ -18,7 +18,7 @@ public partial class GameList : ContentPage
         base.OnAppearing();
 
         if (_viewModel.Games.Count == 0)
-            _viewModel.LoadItemsCommand.Execute(null);
+            _viewModel.LoadGamesCommand.Execute(null);
     }
 }
 
