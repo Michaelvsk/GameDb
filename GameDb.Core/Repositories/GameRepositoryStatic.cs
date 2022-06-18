@@ -16,6 +16,16 @@ public class GameRepositoryStatic : IGameRepository
             Platform = new() {Platform.NINTENDO_NES},
             Rating = Rating.Top,
             Cover = new Guid("11111111-1111-1111-1111-111111111112")
+        },
+        new Game()
+        {
+            Id = new Guid("21111111-1111-1111-1111-111111111111"),
+            Title = "Super Metroid",
+            Description = "Maybe the best game of all time.",
+            Genre = new() {Genre.METROIDVANIA},
+            Platform = new() {Platform.NINTENDO_SNES},
+            Rating = Rating.Top,
+            Cover = new Guid("21111111-1111-1111-1111-111111111112")
         }
     };
 

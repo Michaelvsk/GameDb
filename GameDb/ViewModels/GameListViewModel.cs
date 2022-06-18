@@ -4,12 +4,12 @@ using System.Diagnostics;
 using Michaelvsk.GameDb.Models;
 using Michaelvsk.GameDb.Models.DataAccess;
 
+using CommunityToolkit.Mvvm.Input;
+
 namespace Michaelvsk.GameDb.ViewModels;
-public class GameListViewModel : BaseViewModel
+public partial class GameListViewModel : BaseViewModel
 {
     public ObservableCollection<Game> Games { get; set; }
-
-    public Command LoadItemsCommand { get; set; }
 
     IGameRepository _gameRepo;
 
@@ -18,11 +18,10 @@ public class GameListViewModel : BaseViewModel
         _gameRepo = gameRepository;
         Title = "Browse";
         Games = new ObservableCollection<Game>();
-
-        LoadItemsCommand = new Command(async () => await ExecuteLoadItemsCommand());
     }
 
-    async Task ExecuteLoadItemsCommand()
+    [RelayCommand]
+    async Task LoadGames()
     {
         if (IsBusy)
             return;
