@@ -1,19 +1,41 @@
-﻿using Michaelvsk.GameDb.Models;
+﻿using CommunityToolkit.Mvvm.ComponentModel;
+
+using Michaelvsk.GameDb.Models;
+using Michaelvsk.GameDb.Models.DataAccess;
 
 namespace Michaelvsk.GameDb.ViewModels;
 
-internal class GameItemViewModel : BaseViewModel
+[QueryProperty(nameof(GameId), nameof(GameId))]
+public partial class GameItemViewModel : BaseViewModel
 {
+    [ObservableProperty]
+    string _gameId;
     
-    public Game game { get; set; }
+    [ObservableProperty]
+    Game _game;
 
-    public GameItemViewModel()
+    IGameRepository _gameRepo;
+    
+    public GameItemViewModel(IGameRepository gameRepo)
     {
-        game = new Game();
+        _gameRepo = gameRepo;    
     }
 
-    public GameItemViewModel(Game game)
+    partial void OnGameIdChanged(string value)
     {
-        this.game = game;
+        if (Guid.TryParse(value, out var gameId))
+        {
+            LoadGame(gameId);
+        }
+    }
+
+    partial void OnGameChanged(Game value)
+    {
+        Title = Game.Title;
+    }
+
+    void LoadGame(Guid gameId)
+    {
+        Game = _gameRepo.GetGame(gameId);
     }
 }

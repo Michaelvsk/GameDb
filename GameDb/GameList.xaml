@@ -6,7 +6,7 @@
              x:Class="Michaelvsk.GameDb.GameList"
              x:DataType="viewModels:GameListViewModel">
 
-    <ListView x:Name="GameListView" ItemsSource="{Binding Games}" VerticalOptions="FillAndExpand" HasUnevenRows="True" RefreshCommand="{Binding LoadGamesCommand}" IsPullToRefreshEnabled="True" IsRefreshing="{Binding IsBusy, Mode=OneWay}" CachingStrategy="RecycleElement">
+    <ListView x:Name="GameListView" ItemsSource="{Binding Games}" VerticalOptions="FillAndExpand" RefreshCommand="{Binding LoadGamesCommand}" IsPullToRefreshEnabled="True" IsRefreshing="{Binding IsBusy, Mode=OneWay}" CachingStrategy="RecycleElement" ItemSelected="OnItemSelected">
         <ListView.ItemTemplate>
             <DataTemplate x:DataType="models:Game">
                 <ViewCell>
