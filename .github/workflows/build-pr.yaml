@@ -41,8 +41,8 @@ jobs:
 
       - name: Restore project
         run: |
-          dotnet restore
           dotnet workload restore
+          dotnet restore
 
       - name: Init SonarCloud Analyzer
         env:
