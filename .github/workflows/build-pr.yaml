@@ -44,10 +44,10 @@ jobs:
         shell: powershell
         run: >
           .\.sonar\scanner\dotnet-sonarscanner begin
-            /k:"Michaelvsk_GameDb"
-            /o:"github-michaelvsk"
-            /d:sonar.login="${{ secrets.SONAR_TOKEN }}"
-            /d:sonar.host.url="https://sonarcloud.io"
+          /k:"Michaelvsk_GameDb"
+          /o:"github-michaelvsk"
+          /d:sonar.login="${{ secrets.SONAR_TOKEN }}"
+          /d:sonar.host.url="https://sonarcloud.io"
 
       - name: Build Project
         shell: powershell
