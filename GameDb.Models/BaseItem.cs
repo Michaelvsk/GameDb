@@ -1,6 +1,18 @@
-﻿namespace Michaelvsk.GameDb.Models;
+﻿using CommunityToolkit.Diagnostics;
+
+namespace Michaelvsk.GameDb.Models;
 
 public class BaseItem
 {
-    public Guid Id { get; set; }
+    private Guid _id;
+    public Guid Id
+    {
+        get => _id;
+        
+        set
+        {
+            Guard.IsNotDefault<Guid>(value);
+            _id = value;
+        }
+    }
 }

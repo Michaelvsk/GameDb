@@ -8,4 +8,8 @@
     <RootNamespace>Michaelvsk.$(MSBuildProjectName.Replace(" ", "_"))</RootNamespace>
   </PropertyGroup>
 
+  <ItemGroup>
+    <PackageReference Include="CommunityToolkit.Diagnostics" Version="8.0.0-preview4" />
+  </ItemGroup>
+
 </Project>
