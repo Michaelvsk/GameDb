@@ -40,7 +40,7 @@ jobs:
           
             # if fails to extract version number, then let workflow fail
             Write-Host "Extracted version is: $versionNo"
-            if ($versionNo -ne $null) {
+            if ($versionNo -eq $null) {
               Write-Host "::error ::Failed to read version number from project file."
               exit 1
             }              
