@@ -29,10 +29,10 @@ jobs:
           # install prerequisites
           sudo apt-get install -y xmlstarlet
           
-          $cprojFiles = @(
-            "./GameDb/GameDb.csproj",
-            "./GameDb.Core/GameDb.Core.csproj",
-            "./GameDb.Models/GameDb.Models.csproj",
+          $cprojFiles = @( `
+            "./GameDb/GameDb.csproj", `
+            "./GameDb.Core/GameDb.Core.csproj", `
+            "./GameDb.Models/GameDb.Models.csproj", `
           )
 
           foreach($proj in $cprojFiles) {
