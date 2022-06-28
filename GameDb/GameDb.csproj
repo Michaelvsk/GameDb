@@ -31,6 +31,13 @@
 		<AssemblyName>Michaelvsk.$(MSBuildProjectName)</AssemblyName>
 	</PropertyGroup>
 
+    <PropertyGroup>
+      <Version>0.1.0</Version>
+      <Company>Michaelvsk</Company>
+      <Authors>Michael Keller</Authors>
+      <Product>GameDb</Product>
+    </PropertyGroup>
+
 	<ItemGroup>
 		<!-- App Icon -->
 		<MauiIcon Include="Resources\appicon.svg" ForegroundFile="Resources\appiconfg.svg" Color="#512BD4" />
