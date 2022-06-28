@@ -30,9 +30,9 @@ jobs:
           sudo apt-get install -y xmlstarlet
           
           $cprojFiles = @( `
-            "./GameDb/GameDb.csproj", `
-            "./GameDb.Core/GameDb.Core.csproj", `
-            "./GameDb.Models/GameDb.Models.csproj", `
+            "./GameDb/GameDb.csproj",
+            "./GameDb.Core/GameDb.Core.csproj", 
+            "./GameDb.Models/GameDb.Models.csproj"
           )
 
           foreach($proj in $cprojFiles) {
