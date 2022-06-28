@@ -36,7 +36,7 @@ jobs:
           )
 
           foreach($proj in $cprojFiles) {
-            $versionNo= & Get-Content $proj | xmlstarlet  sel -t -m '/Project/PropertyGroup/AssemblyVersion' -v
+            $versionNo= & xmlstarlet  sel -t -m '/Project/PropertyGroup/AssemblyVersion' -v $proj
           
             # if fails to extract version number, then let workflow fail
             Write-Host "Extracted version is: $versionNo"
