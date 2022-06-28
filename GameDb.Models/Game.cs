@@ -2,6 +2,7 @@
 
 namespace Michaelvsk.GameDb.Models;
 
+// TODO Add OwnerId to distinguish items by user
 public class Game : BaseItem
 {
     string _title;
@@ -39,6 +40,7 @@ public class Game : BaseItem
     public Game(string title)
     {
         Title = title;
+        Id = Guid.NewGuid();
     }
     #pragma warning restore CS8618
 }

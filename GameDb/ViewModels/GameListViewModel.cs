@@ -2,20 +2,20 @@
 using System.Diagnostics;
 
 using Michaelvsk.GameDb.Models;
-using Michaelvsk.GameDb.Models.DataAccess;
 
 using CommunityToolkit.Mvvm.Input;
+using Michaelvsk.GameDb.Core.Services;
 
 namespace Michaelvsk.GameDb.ViewModels;
 public partial class GameListViewModel : BaseViewModel
 {
     public ObservableCollection<Game> Games { get; set; }
 
-    IGameRepository _gameRepo;
+    readonly IGameService _gameService;
 
-    public GameListViewModel(IGameRepository gameRepository)
+    public GameListViewModel(IGameService gameService)
     {
-        _gameRepo = gameRepository;
+        _gameService = gameService;
         Title = "Browse";
         Games = new ObservableCollection<Game>();
     }
@@ -31,7 +31,7 @@ public partial class GameListViewModel : BaseViewModel
         try
         {
             Games.Clear();
-            var notes = await _gameRepo.GetGamesAsync();
+            var notes = await _gameService.GetGamesAsync();
             foreach (var note in notes)
             {
                 Games.Add(note);

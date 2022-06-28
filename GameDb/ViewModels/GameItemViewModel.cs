@@ -1,7 +1,8 @@
-﻿using CommunityToolkit.Mvvm.ComponentModel;
+﻿using CommunityToolkit.Maui.Alerts;
+using CommunityToolkit.Mvvm.ComponentModel;
 
+using Michaelvsk.GameDb.Core.Services;
 using Michaelvsk.GameDb.Models;
-using Michaelvsk.GameDb.Models.DataAccess;
 
 namespace Michaelvsk.GameDb.ViewModels;
 
@@ -10,22 +11,22 @@ public partial class GameItemViewModel : BaseViewModel
 {
     [ObservableProperty]
     string _gameId;
-    
+
     [ObservableProperty]
     Game _game;
 
-    IGameRepository _gameRepo;
-    
-    public GameItemViewModel(IGameRepository gameRepo)
+    readonly IGameService _gameService;
+
+    public GameItemViewModel(IGameService gameService)
     {
-        _gameRepo = gameRepo;    
+        _gameService = gameService;
     }
 
-    partial void OnGameIdChanged(string value)
+    async partial void OnGameIdChanged(string value)
     {
         if (Guid.TryParse(value, out var gameId))
         {
-            LoadGame(gameId);
+            await LoadGame(gameId);
         }
     }
 
@@ -34,8 +35,18 @@ public partial class GameItemViewModel : BaseViewModel
         Title = Game.Title;
     }
 
-    void LoadGame(Guid gameId)
+    async Task LoadGame(Guid gameId)
     {
-        Game = _gameRepo.GetGame(gameId);
+        var result = await _gameService.GetGameByIdAsync(gameId);
+        result.Switch(
+            game => Game = game,
+            async nf =>
+            {
+                // TODO Implement l10n
+                // TODO Implement a notification service
+                var toast = Toast.Make("Selected game was not found. :(", CommunityToolkit.Maui.Core.ToastDuration.Long);
+                await toast.Show();
+                await Shell.Current.GoToAsync("..");
+            });
     }
 }

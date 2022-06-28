@@ -9,7 +9,7 @@ public class BaseItem
     {
         get => _id;
         
-        set
+        protected set
         {
             Guard.IsNotDefault<Guid>(value);
             _id = value;
