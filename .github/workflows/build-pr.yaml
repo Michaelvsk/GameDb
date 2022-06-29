@@ -8,7 +8,7 @@ on:
 jobs:
   build:
     name: Build
-    runs-on: ubuntu-latest
+    runs-on: windows-latest
     defaults:
       run:
         shell: pwsh
@@ -26,8 +26,6 @@ jobs:
 
       - name: Versioning project's csproj file
         run: |
-          # install prerequisites
-          sudo apt-get install -y xmlstarlet
           
           $cprojFiles = @( `
             "./GameDb/GameDb.csproj",
@@ -36,7 +34,7 @@ jobs:
           )
 
           foreach($proj in $cprojFiles) {
-            $versionNo= & xmlstarlet  sel -t -v "/Project/PropertyGroup/Version" $proj
+            $versionNo = Select-Xml -XPath "/Project/PropertyGroup/Version" -Path $proj | %{$_.node.InnerXML}
           
             # if fails to extract version number, then let workflow fail
             Write-Host "Extracted version is: $versionNo"
