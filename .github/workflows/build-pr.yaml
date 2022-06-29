@@ -81,6 +81,8 @@ jobs:
       # Build Project
       - name: Restore project
         run: |
+          Write-Host "${{ env.artifact_version }}"
+          
           dotnet workload restore
           dotnet restore
 
