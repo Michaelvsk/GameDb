@@ -49,7 +49,7 @@ jobs:
               $versionNo="$versionNo.$env:GITHUB_RUN_ID"
             }
             Write-Host "Using version '$versionNo' for this build artifact"
-            Write-Host "artifact_version=$versionNo" >> $env:GITHUB_ENV  
+            Write-Host "artifact_version=$versionNo" >> $GITHUB_ENV  
           }
 
           
