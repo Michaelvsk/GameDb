@@ -13,6 +13,23 @@ jobs:
       run:
         shell: pwsh
     steps:
+      - name: testing passing value between steps
+        run: |
+          Write-Host $GITHUB_ENV
+          Write-Host $env:GITHUB_ENV
+          
+          $versionNo = "1.2.3.4"
+          Add-Content $GITHUB_ENV "artifact_version=$versionNo"
+          
+      - name: testing passing value between steps
+        run: |
+          Write-Host $env:artifact_version
+          Write-Host ${ env.artifact_version }
+          Write-Host ${{ env.artifact_version }}
+
+          exit 1
+
+
       - uses: actions/checkout@v2
         with:
           fetch-depth: 0  # Shallow clones should be disabled for a better relevancy of analysis
