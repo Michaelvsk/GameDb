@@ -94,7 +94,7 @@ jobs:
           /o:"github-michaelvsk"
           /d:sonar.login="${{ secrets.SONAR_TOKEN }}"
           /d:sonar.host.url="https://sonarcloud.io"
-          /d:sonar.projectVersion="${{ env.artifact_version }}"
+          /v:="${{ env.artifact_version }}"
 
       - name: Build Project
         run: dotnet build -c Release
