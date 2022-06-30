@@ -1,12 +1,12 @@
-﻿<Project Sdk="Microsoft.NET.Sdk">
-
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
     <Version>0.1.0</Version>
     <Company>Michaelvsk</Company>
     <Authors>Michael Keller</Authors>
     <Product>GameDb</Product>
+    <AssemblyVersion>1.0.1</AssemblyVersion>
   </PropertyGroup>
-
   <PropertyGroup>
     <TargetFramework>net6.0</TargetFramework>
     <ImplicitUsings>enable</ImplicitUsings>
@@ -15,5 +15,4 @@
     <RootNamespace>Michaelvsk.$(MSBuildProjectName.Replace(" ", "_"))</RootNamespace>
     <RestorePackagesWithLockFile>true</RestorePackagesWithLockFile>
   </PropertyGroup>
-
 </Project>
