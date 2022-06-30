@@ -13,6 +13,7 @@
     <Nullable>enable</Nullable>
     <AssemblyName>Michaelvsk.$(MSBuildProjectName)</AssemblyName>
     <RootNamespace>Michaelvsk.$(MSBuildProjectName.Replace(" ", "_"))</RootNamespace>
+    <RestorePackagesWithLockFile>true</RestorePackagesWithLockFile>
   </PropertyGroup>
 
   <ItemGroup>

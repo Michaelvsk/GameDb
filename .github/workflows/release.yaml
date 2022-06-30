@@ -26,7 +26,7 @@ jobs:
       # Tool to compute version based on Github PR labels
       - name: Install auto versioning
         run: >
-          npm install -g
+          npm install --location=global
             auto@10.37.1
             @auto-it/released@10.37.1
             @auto-it/git-tag@10.37.1
