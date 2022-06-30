@@ -33,7 +33,7 @@ jobs:
           )
 
           foreach($proj in $cprojFiles) {
-            $versionNo = Select-Xml -XPath "/Project/PropertyGroup/Version" -Path $proj | %{$_.node.InnerXML}
+            $versionNo = Select-Xml -XPath "/Project/PropertyGroup/AssemblyVersion" -Path $proj | %{$_.node.InnerXML}
           
             # if fails to extract version number, then let workflow fail
             Write-Host "Extracted version is: $versionNo"
