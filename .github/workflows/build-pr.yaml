@@ -95,7 +95,7 @@ jobs:
 
       - name: Restore project
         run: |
-          dotnet workload restore ----temp-dir ~/workloadTemp
+          dotnet workload restore --temp-dir ~/workloadTemp
           dotnet restore --locked-mode
 
       - name: Init SonarCloud Analyzer
