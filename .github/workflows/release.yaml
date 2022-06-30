@@ -1,0 +1,72 @@
+name: Release
+concurrency: release
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [ main ]
+
+jobs:
+  release:
+    name: Release
+    if: false == endsWith(github.event.head_commit.message, '[release]')
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          fetch-depth: 0
+          token: ${{ secrets.GH_ADMIN_TOKEN }}
+
+      - name: Setup GIT
+        run: |
+          git config user.email "$GITHUB_ACTOR@users.noreply.github.com"
+          git config user.name "$GITHUB_ACTOR"
+
+      # Tool to compute version based on Github PR labels
+      - name: Install auto versioning
+        run: >
+          npm install -g
+            auto@10.37.1
+            @auto-it/released@10.37.1
+            @auto-it/git-tag@10.37.1
+            @auto-it/first-time-contributor@10.37.1 
+
+      # dotnet version relies on .NET Core 2.1 (TODO maybe fork dotnet version as .NET 2.1 reached EOL)
+      - uses: actions/setup-dotnet@v1
+        with:
+          dotnet-version: '2.1.x'
+
+      # Versioning tool for dotnet projects similar to 'npm version'
+      - name: install DotNetVersioning
+        run: dotnet tool install --global DotNetVersioning.Tool
+
+      # CLI XPath parser to extract final AssemblyVersion from csproj file
+      - name: Install xmlstarlet
+        run: sudo apt-get install -y xmlstarlet
+
+      - id: versioning
+        name: Versioning
+        run: |
+          if VERSION=$(auto version 2>&1); then
+            echo "Calculated version bump is ${VERSION}"
+          else
+            echo "auto version failed. Error: ${VERSION}"
+            exit 1
+          fi
+
+          if [ ! -z "$VERSION" ]; then
+            dotnet version $VERSION
+            if VERSION_NO=$(xmlstarlet  sel -t -m '/Project/PropertyGroup/AssemblyVersion' -v . < ./AzMoNCon/AzMoNCon.csproj 2>&1); then
+              echo "Extracted version number is ${VERSION_NO}"
+              git commit -a -m "chore(release): $VERSION_NO [skip ci]"
+              auto shipit
+            else
+              echo "Extracting version from csproj file failed. Error: ${VERSION_NO}"
+              exit 1
+            fi
+          else
+            echo 'Not bumping version, skipping release'
+          fi
+        env:
+         GITHUB_TOKEN: ${{secrets.GH_ADMIN_TOKEN}}
