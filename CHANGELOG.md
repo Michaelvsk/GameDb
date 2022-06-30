@@ -1,3 +1,15 @@
+# v0.0.2 (Thu Jun 30 2022)
+
+#### 🐛 Bug Fix
+
+- ci: fix project versions [#11](https://github.com/Michaelvsk/GameDb/pull/11) ([@Michaelvsk](https://github.com/Michaelvsk))
+
+#### Authors: 1
+
+- Michael Keller ([@Michaelvsk](https://github.com/Michaelvsk))
+
+---
+
 # v0.0.1 (Thu Jun 30 2022)
 
 :tada: This release contains work from a new contributor! :tada:
