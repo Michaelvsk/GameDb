@@ -1,5 +1,8 @@
 name: Build
-concurrency: ${{ github.ref_name }}
+concurrency: 
+  group: ${{ github.ref }}
+  cancel-in-progress: true
+
 on:
   workflow_dispatch:
   pull_request:
@@ -33,7 +36,7 @@ jobs:
           )
 
           foreach($proj in $cprojFiles) {
-            $versionNo = Select-Xml -XPath "/Project/PropertyGroup/Version" -Path $proj | %{$_.node.InnerXML}
+            $versionNo = Select-Xml -XPath "/Project/PropertyGroup/AssemblyVersion" -Path $proj | %{$_.node.InnerXML}
           
             # if fails to extract version number, then let workflow fail
             Write-Host "Extracted version is: $versionNo"
@@ -95,7 +98,7 @@ jobs:
 
       - name: Restore project
         run: |
-          dotnet workload restore ----temp-dir ~/workloadTemp
+          dotnet workload restore --temp-dir ~/workloadTemp
           dotnet restore --locked-mode
 
       - name: Init SonarCloud Analyzer
