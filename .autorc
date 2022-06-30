@@ -1,7 +1,8 @@
 {
   "plugins": [
     "git-tag",
-    "first-time-contributor"
+    "first-time-contributor",
+    "released"
   ],
   "owner": "Michaelvsk",
   "repo": "GameDb",
