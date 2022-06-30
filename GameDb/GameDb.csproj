@@ -1,11 +1,10 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
-    <Version>0.1.0</Version>
     <Company>Michaelvsk</Company>
     <Authors>Michael Keller</Authors>
     <Product>GameDb</Product>
-    <AssemblyVersion>1.0.1</AssemblyVersion>
+    <AssemblyVersion>0.0.1</AssemblyVersion>
   </PropertyGroup>
   <PropertyGroup>
     <TargetFrameworks>net6.0-android;net6.0-ios;net6.0-maccatalyst</TargetFrameworks>
