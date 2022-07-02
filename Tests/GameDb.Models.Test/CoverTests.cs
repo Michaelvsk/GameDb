@@ -1,4 +1,4 @@
-﻿namespace GameDb.Models.Tests;
+﻿namespace Michaelvsk.GameDb.Models.Test;
 
 public class CoverTests
 {

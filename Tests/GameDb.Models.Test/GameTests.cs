@@ -1,4 +1,4 @@
-﻿namespace Michaelvsk.GameDb.Models.Tests;
+﻿namespace Michaelvsk.GameDb.Models.Test;
 public class GameTests
 {
     [Fact]
