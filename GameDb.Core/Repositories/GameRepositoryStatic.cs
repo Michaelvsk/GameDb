@@ -7,7 +7,7 @@ namespace Michaelvsk.GameDb.Core.Repositories;
 
 public class GameRepositoryStatic : IGameRepository
 {
-    List<Game> _games = new()
+    readonly List<Game> _games = new()
     {
         new Game("Super Mario Bros.")
         {
