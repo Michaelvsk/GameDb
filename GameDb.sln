@@ -9,9 +9,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GameDb.Models", "GameDb.Mod
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GameDb.Core", "GameDb.Core\GameDb.Core.csproj", "{2910A88B-0720-447B-B748-61CDB68220ED}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{410D33B4-898A-47D5-A0BE-3577729306E7}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GameDb.Models.Test", "Tests\GameDb.Models.Test\GameDb.Models.Test.csproj", "{2527D2C5-29F6-4E98-ADEA-555D91A64179}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GameDb.Models.Test", "Tests\GameDb.Models.Test\GameDb.Models.Test.csproj", "{2527D2C5-29F6-4E98-ADEA-555D91A64179}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -40,9 +38,6 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
-	EndGlobalSection
-	GlobalSection(NestedProjects) = preSolution
-		{2527D2C5-29F6-4E98-ADEA-555D91A64179} = {410D33B4-898A-47D5-A0BE-3577729306E7}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {61F7FB11-1E47-470C-91E2-47F8143E1572}
