@@ -26,4 +26,16 @@ public class NotFoundTests
 
         Assert.Throws<ArgumentException>(actual);
     }
+
+    [Fact]
+    public void Set_Inner_Error_And_Read()
+    {
+        string message = "Outer Error";
+        IError exprectedInner = new NotFound("Inner error");
+        IError error = new NotFound(message, exprectedInner);
+
+        var actual = error.Inner;
+
+        Assert.Equal(exprectedInner, actual);
+    }
 }
