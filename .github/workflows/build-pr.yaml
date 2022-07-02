@@ -1,8 +1,10 @@
 name: Build
+concurrency: 
+  group: ${{ github.ref }}
+  cancel-in-progress: true
+
 on:
-  push:
-    branches:
-      - master
+  workflow_dispatch:
   pull_request:
     types: [opened, synchronize, reopened]
 jobs:
@@ -11,15 +13,53 @@ jobs:
     runs-on: windows-latest
     defaults:
       run:
-        shell: powershell
+        shell: pwsh
     steps:
+      - uses: actions/checkout@v2
+        with:
+          fetch-depth: 0  # Shallow clones should be disabled for a better relevancy of analysis
+
+
+      # Versioning
+      - name: Install .NET Core
+        uses: actions/setup-dotnet@v1
+        with:
+          dotnet-version: 6.x
+
+      - name: Versioning project's csproj file
+        run: |
+          
+          $cprojFiles = @( `
+            "./GameDb/GameDb.csproj",
+            "./GameDb.Core/GameDb.Core.csproj", 
+            "./GameDb.Models/GameDb.Models.csproj"
+          )
+
+          foreach($proj in $cprojFiles) {
+            $versionNo = Select-Xml -XPath "/Project/PropertyGroup/AssemblyVersion" -Path $proj | %{$_.node.InnerXML}
+          
+            # if fails to extract version number, then let workflow fail
+            Write-Host "Extracted version is: $versionNo"
+            if ($versionNo -eq $null) {
+              Write-Host "::error ::Failed to read version number from project file."
+              exit 1
+            }              
+            
+            # append build number if requested
+            if ($env:GITHUB_REF_NAME -ne "main") {
+              Write-Host "Appending build number to version"
+              $versionNo="$versionNo.$env:GITHUB_RUN_ID"
+            }
+            Write-Host "Using version '$versionNo' for this build artifact"
+            Add-Content $env:GITHUB_ENV "artifact_version=$versionNo"
+          }
+
+          
+      # Prepare SonarCloud
       - name: Set up JDK 11
         uses: actions/setup-java@v1
         with:
           java-version: 1.11
-      - uses: actions/checkout@v2
-        with:
-          fetch-depth: 0  # Shallow clones should be disabled for a better relevancy of analysis
       - name: Cache SonarCloud packages
         uses: actions/cache@v1
         with:
@@ -37,12 +77,29 @@ jobs:
         if: steps.cache-sonar-scanner.outputs.cache-hit != 'true'
         run: |
           New-Item -Path .\.sonar\scanner -ItemType Directory
-          dotnet tool update dotnet-sonarscanner --tool-path .\.sonar\scanner
+          dotnet tool update dotnet-sonarscanner --tool-path ./.sonar/scanner
+
+      # Build Project
+      - uses: actions/cache@v3
+        name: Cache nuget packages
+        with:
+          path: ~/.nuget/packages
+          key: ${{ runner.os }}-nuget-${{ hashFiles('**/packages.lock.json') }}
+          restore-keys: |
+            ${{ runner.os }}-nuget-
+      
+      - uses: actions/cache@v3
+        name: Cache .NET workload downloads
+        with:
+          path: ~/workloadTemp
+          key: ${{ runner.os }}-nuget-${{ hashFiles('**/packages.lock.json') }}
+          restore-keys: |
+            ${{ runner.os }}-nuget-
 
       - name: Restore project
         run: |
-          dotnet workload restore
-          dotnet restore
+          dotnet workload restore --temp-dir ~/workloadTemp
+          dotnet restore --locked-mode
 
       - name: Init SonarCloud Analyzer
         env:
@@ -54,6 +111,7 @@ jobs:
           /o:"github-michaelvsk"
           /d:sonar.login="${{ secrets.SONAR_TOKEN }}"
           /d:sonar.host.url="https://sonarcloud.io"
+          /v:="${{ env.artifact_version }}"
 
       - name: Build Project
         run: dotnet build -c Release
