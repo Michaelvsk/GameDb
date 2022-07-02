@@ -42,5 +42,11 @@ public class Game : BaseItem
         Title = title;
         Id = Guid.NewGuid();
     }
+
+    public Game(Guid id, string title)
+    {
+        Title = title;
+        Id = id;
+    }
     #pragma warning restore CS8618
 }

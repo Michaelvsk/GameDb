@@ -20,8 +20,15 @@ public class Cover : BaseItem
     // Constructor indeed ensures that _pngData is properly initialized. Check are in PngData's setter.
     #pragma warning disable CS8618 // Non-nullable field must contain a non-null value when exiting constructor. Consider declaring as nullable.
     public Cover(byte[] pngData)
-    #pragma warning restore CS8618
     {
+        Id = Guid.NewGuid();
         PngData = pngData;
     }
+
+    public Cover(Guid id, byte[] pngData)
+    {
+        Id = id;
+        PngData = pngData;
+    }
+    #pragma warning restore CS8618
 }
