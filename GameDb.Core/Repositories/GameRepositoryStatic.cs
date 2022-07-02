@@ -27,9 +27,9 @@ public class GameRepositoryStatic : IGameRepository
         }
     };
 
-    public async Task<OneOf<Game, NotFound>> GetGameByIdAsync(Guid Id)
+    public async Task<OneOf<Game, NotFound>> GetGameByIdAsync(Guid id)
     {
-        var game = await Task.Run(() => _games.FirstOrDefault(g => g.Id == Id));
+        var game = await Task.Run(() => _games.FirstOrDefault(g => g.Id == id));
 
         if (game != null) return game;
         

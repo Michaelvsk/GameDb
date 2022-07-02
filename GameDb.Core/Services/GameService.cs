@@ -11,7 +11,7 @@ namespace Michaelvsk.GameDb.Core.Services;
 
 public class GameService : IGameService
 {
-    IGameRepository _gameRepo;
+    readonly IGameRepository _gameRepo;
 
     public GameService(IGameRepository gameRepo)
     {
