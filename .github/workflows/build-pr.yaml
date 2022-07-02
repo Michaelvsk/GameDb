@@ -81,14 +81,14 @@ jobs:
 
       # Prepare test coverage analysis
       - name: Cache DotNet Coverage Tool
-        id: cache-dotnet-coverage
+        id: cache-dotcover
         uses: actions/cache@v1
         with:
           path: .\.net-coverage
-          key: ${{ runner.os }}-dotnet-coverage
-          restore-keys: ${{ runner.os }}-dotnet-coverage
+          key: ${{ runner.os }}-dotcover
+          restore-keys: ${{ runner.os }}-dotcover
       - name: Install DotNet Coverage Tool
-        if: steps.cache-dotnet-coverage.outputs.cache-hit != 'true'
+        if: steps.cache-dotcover.outputs.cache-hit != 'true'
         run: |
           New-Item -Path .\.net-coverage -ItemType Directory
           dotnet tool update JetBrains.dotCover.GlobalTool --tool-path ./.net-coverage
