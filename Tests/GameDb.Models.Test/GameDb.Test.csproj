@@ -26,7 +26,12 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\..\GameDb.Core\GameDb.Core.csproj" />
     <ProjectReference Include="..\..\GameDb.Models\GameDb.Models.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="App\" />
   </ItemGroup>
 
 </Project>

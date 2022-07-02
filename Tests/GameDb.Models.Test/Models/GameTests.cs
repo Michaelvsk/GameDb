@@ -1,4 +1,4 @@
-﻿namespace Michaelvsk.GameDb.Models.Test;
+﻿namespace Michaelvsk.GameDb.Test.Models;
 public class GameTests
 {
     [Fact]
@@ -17,7 +17,7 @@ public class GameTests
     [Fact]
     public void Set_Empty_Title_ThrowsArgumentException()
     {
-        string title = string.Empty;
+        var title = string.Empty;
         Game game;
 
         Action actual = () => game = new Game(title);

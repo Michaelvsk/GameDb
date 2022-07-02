@@ -1,4 +1,4 @@
-﻿namespace Michaelvsk.GameDb.Models.Test;
+﻿namespace Michaelvsk.GameDb.Test.Models;
 
 public class CoverTests
 {
@@ -19,9 +19,9 @@ public class CoverTests
         byte[]? data = null;
         Cover cover;
 
-        #pragma warning disable CS8604 // Possible null reference argument.
+#pragma warning disable CS8604 // Possible null reference argument.
         Action actual = () => cover = new Cover(data);
-        #pragma warning restore CS8604 // Possible null reference argument.
+#pragma warning restore CS8604 // Possible null reference argument.
 
         Assert.Throws<ArgumentNullException>(actual);
     }
@@ -29,11 +29,11 @@ public class CoverTests
     [Fact]
     public void Assign_EmptyByteArray_PngData_ThrowsArgumentOutOfRangeException()
     {
-        byte[]? data = new byte[] { };
+        var data = new byte[] { };
         Cover cover;
 
         Action actual = () => cover = new Cover(data);
 
         Assert.Throws<ArgumentOutOfRangeException>(actual);
-    }    
+    }
 }

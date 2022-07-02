@@ -1,4 +1,6 @@
-﻿using CommunityToolkit.Maui;
+﻿using System.Diagnostics.CodeAnalysis;
+
+using CommunityToolkit.Maui;
 
 using Michaelvsk.GameDb.Core.Repositories;
 using Michaelvsk.GameDb.Core.Services;
@@ -7,6 +9,7 @@ using Michaelvsk.GameDb.ViewModels;
 
 namespace Michaelvsk.GameDb;
 
+[ExcludeFromCodeCoverage]
 public static class MauiProgram
 {
     public static MauiApp CreateMauiApp()

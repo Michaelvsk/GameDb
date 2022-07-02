@@ -1,10 +1,13 @@
-﻿using Michaelvsk.GameDb.Core.Errors;
+﻿using System.Diagnostics.CodeAnalysis;
+
+using Michaelvsk.GameDb.Core.Errors;
 using Michaelvsk.GameDb.Models;
 
 using OneOf;
 
 namespace Michaelvsk.GameDb.Core.Repositories;
 
+[ExcludeFromCodeCoverage]
 public class GameRepositoryStatic : IGameRepository
 {
     readonly List<Game> _games = new()
