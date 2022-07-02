@@ -7,8 +7,11 @@ public class NotFoundTests
     public void Set_Null_Message_ThrowsArgumentNullException()
     {
         string? message = null;
+        IError error;
 
-        Action actual = () => new NotFound(message);
+        #pragma warning disable CS8604 // Possible null reference argument.
+        Action actual = () => error = new NotFound(message);
+        #pragma warning restore CS8604 // Possible null reference argument.
 
         Assert.Throws<ArgumentNullException>(actual);
     }
@@ -17,8 +20,9 @@ public class NotFoundTests
     public void Set_Empty_Message_ThrowsArgumentException()
     {
         string message = string.Empty;
+        IError error;
         
-        Action actual = () => new NotFound(message);
+        Action actual = () => error = new NotFound(message);
 
         Assert.Throws<ArgumentException>(actual);
     }

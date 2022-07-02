@@ -29,7 +29,7 @@ public class CoverTests
     [Fact]
     public void Assign_EmptyByteArray_PngData_ThrowsArgumentOutOfRangeException()
     {
-        var data = new byte[] { };
+        var data = Array.Empty<byte>();
         Cover cover;
 
         Action actual = () => cover = new Cover(data);
