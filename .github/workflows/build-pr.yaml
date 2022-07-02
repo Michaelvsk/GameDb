@@ -91,14 +91,14 @@ jobs:
       - uses: actions/cache@v3
         name: Cache .NET workload downloads
         with:
-          path: ~/workloadTemp
+          path: ./.workloadTemp
           key: ${{ runner.os }}-nuget-${{ hashFiles('**/packages.lock.json') }}
           restore-keys: |
             ${{ runner.os }}-nuget-
 
       - name: Restore project
         run: |
-          dotnet workload restore --temp-dir ~/workloadTemp
+          dotnet workload restore --temp-dir ./.workloadTemp -v diag
           dotnet restore --locked-mode
 
       - name: Init SonarCloud Analyzer
@@ -114,7 +114,10 @@ jobs:
           /v:="${{ env.artifact_version }}"
 
       - name: Build Project
-        run: dotnet build -c Release
+        run: dotnet build -c Release --nologo
+
+      - name: Run UnitTests
+        run: dotnet test -c Release --nologo
 
       - name: Finish SonarCloud Analyzer
         env:
