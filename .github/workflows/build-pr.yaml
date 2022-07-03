@@ -79,6 +79,20 @@ jobs:
           New-Item -Path .\.sonar\scanner -ItemType Directory
           dotnet tool update dotnet-sonarscanner --tool-path ./.sonar/scanner
 
+      # Prepare test coverage analysis
+      - name: Cache DotNet Coverage Tool
+        id: cache-dotcover
+        uses: actions/cache@v1
+        with:
+          path: .\.net-coverage
+          key: ${{ runner.os }}-dotcover
+          restore-keys: ${{ runner.os }}-dotcover
+      - name: Install DotNet Coverage Tool
+        if: steps.cache-dotcover.outputs.cache-hit != 'true'
+        run: |
+          New-Item -Path .\.net-coverage -ItemType Directory
+          dotnet tool update JetBrains.dotCover.GlobalTool --tool-path ./.net-coverage
+
       # Build Project
       - uses: actions/cache@v3
         name: Cache nuget packages
@@ -88,17 +102,9 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-nuget-
       
-      - uses: actions/cache@v3
-        name: Cache .NET workload downloads
-        with:
-          path: ~/workloadTemp
-          key: ${{ runner.os }}-nuget-${{ hashFiles('**/packages.lock.json') }}
-          restore-keys: |
-            ${{ runner.os }}-nuget-
-
       - name: Restore project
         run: |
-          dotnet workload restore --temp-dir ~/workloadTemp
+          dotnet workload restore
           dotnet restore --locked-mode
 
       - name: Init SonarCloud Analyzer
@@ -112,9 +118,13 @@ jobs:
           /d:sonar.login="${{ secrets.SONAR_TOKEN }}"
           /d:sonar.host.url="https://sonarcloud.io"
           /v:="${{ env.artifact_version }}"
+          /d:sonar.cs.dotcover.reportsPaths=dotCover.Output.html
 
       - name: Build Project
-        run: dotnet build -c Release
+        run: dotnet build -c Release --no-incremental --nologo
+
+      - name: Calculate UnitTests Code Coverage
+        run: .\.net-coverage\dotnet-dotcover test --dcReportType=HTML --dcXml=dotCoverConfig.xml
 
       - name: Finish SonarCloud Analyzer
         env:

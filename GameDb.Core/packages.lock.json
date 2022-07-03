@@ -2,8 +2,22 @@
   "version": 1,
   "dependencies": {
     "net6.0": {
+      "OneOf": {
+        "type": "Direct",
+        "requested": "[3.0.223, )",
+        "resolved": "3.0.223",
+        "contentHash": "YWabiHBFfDdKIO7/TEa72mARVVo5u5FqFnfXuTqjIupMvJlhoH8d0m4uKtczaINuT0vGR1qlXJayeU6bTw5myg=="
+      },
+      "CommunityToolkit.Diagnostics": {
+        "type": "Transitive",
+        "resolved": "8.0.0-preview4",
+        "contentHash": "m9L7cNLFqr61wQfUUHAF/LKsq7Ig+aUrOtURIUcGLniMfNDJW+45KuJRp7F4VUHK1gDkNTOUsmrx5b0nj2y2zw=="
+      },
       "Michaelvsk.GameDb.Models": {
-        "type": "Project"
+        "type": "Project",
+        "dependencies": {
+          "CommunityToolkit.Diagnostics": "[8.0.0-preview4, )"
+        }
       }
     }
   }

@@ -1,5 +1,4 @@
-﻿using Michaelvsk.GameDb.Models.DataAccess;
-using Michaelvsk.GameDb.ViewModels;
+﻿using Michaelvsk.GameDb.ViewModels;
 
 namespace Michaelvsk.GameDb.Pages;
 

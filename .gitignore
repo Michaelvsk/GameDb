@@ -364,3 +364,4 @@ FodyWeavers.xsd
 
 # Custom entries
 /**/.env
+dotCover.Output*

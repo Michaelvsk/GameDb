@@ -1,4 +1,6 @@
-﻿using Michaelvsk.GameDb.Platforms.iOS;
+﻿using System.Diagnostics.CodeAnalysis;
+
+using Michaelvsk.GameDb.Platforms.iOS;
 
 using ObjCRuntime;
 
@@ -6,6 +8,7 @@ using UIKit;
 
 namespace GameDb;
 
+[ExcludeFromCodeCoverage]
 public class Program
 {
 	// This is the main entry point of the application.

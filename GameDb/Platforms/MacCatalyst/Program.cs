@@ -1,7 +1,10 @@
-﻿using UIKit;
+﻿using System.Diagnostics.CodeAnalysis;
+
+using UIKit;
 
 namespace Michaelvsk.GameDb.Platforms.MacCatalyst;
 
+[ExcludeFromCodeCoverage]
 public class Program
 {
     // This is the main entry point of the application.

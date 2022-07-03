@@ -16,12 +16,14 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Remove="Interfaces\**" />
-    <Compile Remove="Services\**" />
     <EmbeddedResource Remove="Interfaces\**" />
-    <EmbeddedResource Remove="Services\**" />
     <None Remove="Interfaces\**" />
-    <None Remove="Services\**" />
   </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="OneOf" Version="3.0.223" />
+  </ItemGroup>
+
   <ItemGroup>
     <ProjectReference Include="..\GameDb.Models\GameDb.Models.csproj" />
   </ItemGroup>

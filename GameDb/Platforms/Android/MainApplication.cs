@@ -1,9 +1,12 @@
-﻿using Android.App;
+﻿using System.Diagnostics.CodeAnalysis;
+
+using Android.App;
 using Android.Runtime;
 
 namespace Michaelvsk.GameDb.Platforms.Android;
 
 [Application]
+[ExcludeFromCodeCoverage]
 public class MainApplication : MauiApplication
 {
     public MainApplication(IntPtr handle, JniHandleOwnership ownership)
