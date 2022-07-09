@@ -984,9 +984,16 @@
           "Xamarin.Kotlin.StdLib.Jdk8": "1.6.20.1"
         }
       },
+      "Michaelvsk.GameDb.Common": {
+        "type": "Project",
+        "dependencies": {
+          "CommunityToolkit.Diagnostics": "[8.0.0-preview4, )"
+        }
+      },
       "Michaelvsk.GameDb.Core": {
         "type": "Project",
         "dependencies": {
+          "Michaelvsk.GameDb.Common": "[1.0.0, )",
           "Michaelvsk.GameDb.DAL": "[1.0.0, )",
           "OneOf": "[3.0.223, )"
         }
@@ -994,7 +1001,9 @@
       "Michaelvsk.GameDb.DAL": {
         "type": "Project",
         "dependencies": {
-          "CommunityToolkit.Diagnostics": "[8.0.0-preview4, )"
+          "CommunityToolkit.Diagnostics": "[8.0.0-preview4, )",
+          "Michaelvsk.GameDb.Common": "[1.0.0, )",
+          "OneOf": "[3.0.223, )"
         }
       }
     },
@@ -1156,9 +1165,16 @@
         "resolved": "6.0.0",
         "contentHash": "/iUeP3tq1S0XdNNoMz5C9twLSrM/TH+qElHkXWaPvuNOt+99G75NrV0OS2EqHx5wMN7popYjpc8oTjC1y16DLg=="
       },
+      "Michaelvsk.GameDb.Common": {
+        "type": "Project",
+        "dependencies": {
+          "CommunityToolkit.Diagnostics": "[8.0.0-preview4, )"
+        }
+      },
       "Michaelvsk.GameDb.Core": {
         "type": "Project",
         "dependencies": {
+          "Michaelvsk.GameDb.Common": "[1.0.0, )",
           "Michaelvsk.GameDb.DAL": "[1.0.0, )",
           "OneOf": "[3.0.223, )"
         }
@@ -1166,7 +1182,9 @@
       "Michaelvsk.GameDb.DAL": {
         "type": "Project",
         "dependencies": {
-          "CommunityToolkit.Diagnostics": "[8.0.0-preview4, )"
+          "CommunityToolkit.Diagnostics": "[8.0.0-preview4, )",
+          "Michaelvsk.GameDb.Common": "[1.0.0, )",
+          "OneOf": "[3.0.223, )"
         }
       }
     },
@@ -1328,9 +1346,16 @@
         "resolved": "6.0.0",
         "contentHash": "/iUeP3tq1S0XdNNoMz5C9twLSrM/TH+qElHkXWaPvuNOt+99G75NrV0OS2EqHx5wMN7popYjpc8oTjC1y16DLg=="
       },
+      "Michaelvsk.GameDb.Common": {
+        "type": "Project",
+        "dependencies": {
+          "CommunityToolkit.Diagnostics": "[8.0.0-preview4, )"
+        }
+      },
       "Michaelvsk.GameDb.Core": {
         "type": "Project",
         "dependencies": {
+          "Michaelvsk.GameDb.Common": "[1.0.0, )",
           "Michaelvsk.GameDb.DAL": "[1.0.0, )",
           "OneOf": "[3.0.223, )"
         }
@@ -1338,7 +1363,9 @@
       "Michaelvsk.GameDb.DAL": {
         "type": "Project",
         "dependencies": {
-          "CommunityToolkit.Diagnostics": "[8.0.0-preview4, )"
+          "CommunityToolkit.Diagnostics": "[8.0.0-preview4, )",
+          "Michaelvsk.GameDb.Common": "[1.0.0, )",
+          "OneOf": "[3.0.223, )"
         }
       }
     },
@@ -1525,9 +1552,16 @@
         "resolved": "6.0.0",
         "contentHash": "/iUeP3tq1S0XdNNoMz5C9twLSrM/TH+qElHkXWaPvuNOt+99G75NrV0OS2EqHx5wMN7popYjpc8oTjC1y16DLg=="
       },
+      "Michaelvsk.GameDb.Common": {
+        "type": "Project",
+        "dependencies": {
+          "CommunityToolkit.Diagnostics": "[8.0.0-preview4, )"
+        }
+      },
       "Michaelvsk.GameDb.Core": {
         "type": "Project",
         "dependencies": {
+          "Michaelvsk.GameDb.Common": "[1.0.0, )",
           "Michaelvsk.GameDb.DAL": "[1.0.0, )",
           "OneOf": "[3.0.223, )"
         }
@@ -1535,7 +1569,9 @@
       "Michaelvsk.GameDb.DAL": {
         "type": "Project",
         "dependencies": {
-          "CommunityToolkit.Diagnostics": "[8.0.0-preview4, )"
+          "CommunityToolkit.Diagnostics": "[8.0.0-preview4, )",
+          "Michaelvsk.GameDb.Common": "[1.0.0, )",
+          "OneOf": "[3.0.223, )"
         }
       }
     },

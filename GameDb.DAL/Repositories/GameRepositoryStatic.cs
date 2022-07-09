@@ -1,11 +1,11 @@
 ﻿using System.Diagnostics.CodeAnalysis;
 
-using Michaelvsk.GameDb.Core.Errors;
+using Michaelvsk.GameDb.Common.Errors;
 using Michaelvsk.GameDb.Models;
 
 using OneOf;
 
-namespace Michaelvsk.GameDb.Core.Repositories;
+namespace Michaelvsk.GameDb.DAL.Repositories;
 
 [ExcludeFromCodeCoverage]
 public class GameRepositoryStatic : IGameRepository
@@ -35,7 +35,7 @@ public class GameRepositoryStatic : IGameRepository
         var game = await Task.Run(() => _games.FirstOrDefault(g => g.Id == id));
 
         if (game != null) return game;
-        
+
         return new NotFound("Game with specified Id not found.");
     }
 

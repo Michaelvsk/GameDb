@@ -1,9 +1,9 @@
-﻿using Michaelvsk.GameDb.Core.Errors;
+﻿using Michaelvsk.GameDb.Common.Errors;
 using Michaelvsk.GameDb.Models;
 
 using OneOf;
 
-namespace Michaelvsk.GameDb.Core.Repositories;
+namespace Michaelvsk.GameDb.DAL.Repositories;
 
 public interface IGameRepository
 {

@@ -1,4 +1,4 @@
-﻿using Michaelvsk.GameDb.Core.Errors;
+﻿using Michaelvsk.GameDb.Common.Errors;
 
 namespace Michaelvsk.GameDb.Test.Core.Errors;
 public class NotFoundTests

@@ -1,6 +1,6 @@
 ﻿using CommunityToolkit.Diagnostics;
 
-namespace Michaelvsk.GameDb.Core.Errors;
+namespace Michaelvsk.GameDb.Common.Errors;
 
 public sealed record NotFound : IError
 {
