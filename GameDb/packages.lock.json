@@ -987,11 +987,11 @@
       "Michaelvsk.GameDb.Core": {
         "type": "Project",
         "dependencies": {
-          "Michaelvsk.GameDb.Models": "[1.0.0, )",
+          "Michaelvsk.GameDb.DAL": "[1.0.0, )",
           "OneOf": "[3.0.223, )"
         }
       },
-      "Michaelvsk.GameDb.Models": {
+      "Michaelvsk.GameDb.DAL": {
         "type": "Project",
         "dependencies": {
           "CommunityToolkit.Diagnostics": "[8.0.0-preview4, )"
@@ -1159,11 +1159,11 @@
       "Michaelvsk.GameDb.Core": {
         "type": "Project",
         "dependencies": {
-          "Michaelvsk.GameDb.Models": "[1.0.0, )",
+          "Michaelvsk.GameDb.DAL": "[1.0.0, )",
           "OneOf": "[3.0.223, )"
         }
       },
-      "Michaelvsk.GameDb.Models": {
+      "Michaelvsk.GameDb.DAL": {
         "type": "Project",
         "dependencies": {
           "CommunityToolkit.Diagnostics": "[8.0.0-preview4, )"
@@ -1331,11 +1331,11 @@
       "Michaelvsk.GameDb.Core": {
         "type": "Project",
         "dependencies": {
-          "Michaelvsk.GameDb.Models": "[1.0.0, )",
+          "Michaelvsk.GameDb.DAL": "[1.0.0, )",
           "OneOf": "[3.0.223, )"
         }
       },
-      "Michaelvsk.GameDb.Models": {
+      "Michaelvsk.GameDb.DAL": {
         "type": "Project",
         "dependencies": {
           "CommunityToolkit.Diagnostics": "[8.0.0-preview4, )"
@@ -1528,11 +1528,11 @@
       "Michaelvsk.GameDb.Core": {
         "type": "Project",
         "dependencies": {
-          "Michaelvsk.GameDb.Models": "[1.0.0, )",
+          "Michaelvsk.GameDb.DAL": "[1.0.0, )",
           "OneOf": "[3.0.223, )"
         }
       },
-      "Michaelvsk.GameDb.Models": {
+      "Michaelvsk.GameDb.DAL": {
         "type": "Project",
         "dependencies": {
           "CommunityToolkit.Diagnostics": "[8.0.0-preview4, )"

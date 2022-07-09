@@ -13,7 +13,7 @@
         "resolved": "8.0.0-preview4",
         "contentHash": "m9L7cNLFqr61wQfUUHAF/LKsq7Ig+aUrOtURIUcGLniMfNDJW+45KuJRp7F4VUHK1gDkNTOUsmrx5b0nj2y2zw=="
       },
-      "Michaelvsk.GameDb.Models": {
+      "Michaelvsk.GameDb.DAL": {
         "type": "Project",
         "dependencies": {
           "CommunityToolkit.Diagnostics": "[8.0.0-preview4, )"

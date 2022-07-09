@@ -25,6 +25,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\GameDb.Models\GameDb.Models.csproj" />
+    <ProjectReference Include="..\GameDb.DAL\GameDb.DAL.csproj" />
   </ItemGroup>
 </Project>
