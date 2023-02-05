@@ -15,6 +15,9 @@ public partial class GameItemViewModel : BaseViewModel
     [ObservableProperty]
     Game _game;
 
+    [ObservableProperty]
+    ImageSource _coverImageSource;
+
     readonly IGameService _gameService;
 
     public GameItemViewModel(IGameService gameService)
@@ -37,9 +40,13 @@ public partial class GameItemViewModel : BaseViewModel
 
     async Task LoadGame(Guid gameId)
     {
-        var result = await _gameService.GetGameByIdAsync(gameId);
+        var result = await _gameService.GetGameByIdAndCoverAsync(gameId);
         result.Switch(
-            game => Game = game,
+            gameAndCover =>
+            {
+                Game = gameAndCover.Item1;
+                CoverImageSource = ImageSource.FromStream(() => new MemoryStream(gameAndCover.Item2.PngData));
+            },
             async nf =>
             {
                 // TODO Implement l10n

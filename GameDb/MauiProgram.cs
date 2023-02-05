@@ -30,6 +30,7 @@ public static class MauiProgram
         builder.Services.AddTransient<GameDetailPage>();
         builder.Services.AddTransient<GameItemViewModel>();
         builder.Services.AddSingleton<IGameRepository, GameRepositoryStatic>();
+        builder.Services.AddSingleton<ICoverRepository, CoverRepositoryInMemory>();
         builder.Services.AddSingleton<IGameService, GameService>();
 
         return builder.Build();

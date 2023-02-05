@@ -12,7 +12,7 @@ public class GameRepositoryStatic : IGameRepository
 {
     readonly List<Game> _games = new()
     {
-        new Game("Super Mario Bros.")
+        new Game(new Guid("11111111-1111-1111-1111-111111111111"), "Super Mario Bros.")
         {
             Description = "First title of famous Super Mario Bros. series.",
             Genre = new() {Genre.PLATFORMER},
@@ -20,7 +20,7 @@ public class GameRepositoryStatic : IGameRepository
             Rating = Rating.Top,
             CoverId = new Guid("11111111-1111-1111-1111-111111111112")
         },
-        new Game("Super Metroid")
+        new Game(new Guid("21111111-1111-1111-1111-111111111111"), "Super Metroid")
         {
             Description = "Maybe the best game of all time.",
             Genre = new() {Genre.METROIDVANIA},
