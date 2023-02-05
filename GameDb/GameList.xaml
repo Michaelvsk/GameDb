@@ -2,7 +2,7 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:viewModels="clr-namespace:Michaelvsk.GameDb.ViewModels"
-             xmlns:models="clr-namespace:Michaelvsk.GameDb.Models;assembly=Michaelvsk.GameDb.Models"
+             xmlns:models="clr-namespace:Michaelvsk.GameDb.Models;assembly=Michaelvsk.GameDb.DAL"
              x:Class="Michaelvsk.GameDb.GameList"
              x:DataType="viewModels:GameListViewModel">
 
