@@ -1,11 +1,12 @@
 ﻿using System.Diagnostics.CodeAnalysis;
 
 using Michaelvsk.GameDb.Common.Errors;
+using Michaelvsk.GameDb.DAL.Repositories;
 using Michaelvsk.GameDb.Models;
 
 using OneOf;
 
-namespace Michaelvsk.GameDb.DAL.Repositories;
+namespace Michaelvsk.GameDb.DAL.DummyImpl;
 
 [ExcludeFromCodeCoverage]
 public class GameRepositoryStatic : IGameRepository

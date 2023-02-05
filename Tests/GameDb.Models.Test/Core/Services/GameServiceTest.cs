@@ -1,5 +1,6 @@
 ﻿using Michaelvsk.GameDb.Common.Errors;
 using Michaelvsk.GameDb.Core.Services;
+using Michaelvsk.GameDb.DAL.DummyImpl;
 using Michaelvsk.GameDb.DAL.Repositories;
 
 using NSubstitute;
