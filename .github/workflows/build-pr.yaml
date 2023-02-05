@@ -31,7 +31,9 @@ jobs:
           
           $cprojFiles = @( `
             "./GameDb/GameDb.csproj",
+            "./GameDb.Common/GameDb.Common.csproj",
             "./GameDb.Core/GameDb.Core.csproj", 
+            "./GameDb.DAL/GameDb.DAL.csproj",
             "./GameDb.Models/GameDb.Models.csproj"
           )
 
