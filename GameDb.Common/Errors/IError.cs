@@ -1,4 +1,4 @@
-﻿namespace Michaelvsk.GameDb.Core.Errors;
+﻿namespace Michaelvsk.GameDb.Common.Errors;
 
 public interface IError
 {

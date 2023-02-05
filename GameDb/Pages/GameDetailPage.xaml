@@ -6,7 +6,8 @@
              x:DataType="viewModels:GameItemViewModel"
              Title="{Binding Title}">
     <VerticalStackLayout>
-        <Label 
+    <Image x:Name="CoverImage" Source="{Binding CoverImageSource}" Aspect="AspectFit" MaximumHeightRequest="640" />
+    <Label 
             Text="{Binding Game.Description}"
             VerticalOptions="Center" 
             HorizontalOptions="Center" />

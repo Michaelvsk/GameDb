@@ -18,13 +18,14 @@ public class Game : BaseItem
 
     public string? Description { get; set; }
 
-    Guid _coverId;
-    public Guid CoverId
+    Guid? _coverId;
+    public Guid? CoverId
     {
         get => _coverId;
         set
         {
-            Guard.IsNotDefault<Guid>(value);
+            Guard.IsNotNull(value);
+            Guard.IsNotDefault((Guid)value);
             _coverId = value;
         }
     }
@@ -35,8 +36,7 @@ public class Game : BaseItem
 
     public Rating Rating { get; set; } = Rating.NotRated;
 
-    // Disable warning as analyzer does not recognise that _title is not null if constructor succeeds.
-    #pragma warning disable CS8618 // Non-nullable field must contain a non-null value when exiting constructor. Consider declaring as nullable.
+    #pragma warning disable CS8618 // Disable Non-nullable field warning as analyzer does not recognize that _title is not null if constructor succeeds.
     public Game(string title)
     {
         Title = title;

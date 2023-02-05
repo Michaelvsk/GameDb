@@ -1,18 +1,19 @@
 ﻿using System.Diagnostics.CodeAnalysis;
 
-using Michaelvsk.GameDb.Core.Errors;
+using Michaelvsk.GameDb.Common.Errors;
+using Michaelvsk.GameDb.DAL.Repositories;
 using Michaelvsk.GameDb.Models;
 
 using OneOf;
 
-namespace Michaelvsk.GameDb.Core.Repositories;
+namespace Michaelvsk.GameDb.DAL.DummyImpl;
 
 [ExcludeFromCodeCoverage]
 public class GameRepositoryStatic : IGameRepository
 {
     readonly List<Game> _games = new()
     {
-        new Game("Super Mario Bros.")
+        new Game(new Guid("11111111-1111-1111-1111-111111111111"), "Super Mario Bros.")
         {
             Description = "First title of famous Super Mario Bros. series.",
             Genre = new() {Genre.PLATFORMER},
@@ -20,7 +21,7 @@ public class GameRepositoryStatic : IGameRepository
             Rating = Rating.Top,
             CoverId = new Guid("11111111-1111-1111-1111-111111111112")
         },
-        new Game("Super Metroid")
+        new Game(new Guid("21111111-1111-1111-1111-111111111111"), "Super Metroid")
         {
             Description = "Maybe the best game of all time.",
             Genre = new() {Genre.METROIDVANIA},
@@ -35,7 +36,7 @@ public class GameRepositoryStatic : IGameRepository
         var game = await Task.Run(() => _games.FirstOrDefault(g => g.Id == id));
 
         if (game != null) return game;
-        
+
         return new NotFound("Game with specified Id not found.");
     }
 

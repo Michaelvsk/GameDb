@@ -2,8 +2,9 @@
 
 using CommunityToolkit.Maui;
 
-using Michaelvsk.GameDb.Core.Repositories;
 using Michaelvsk.GameDb.Core.Services;
+using Michaelvsk.GameDb.DAL.DummyImpl;
+using Michaelvsk.GameDb.DAL.Repositories;
 using Michaelvsk.GameDb.Pages;
 using Michaelvsk.GameDb.ViewModels;
 
@@ -30,6 +31,7 @@ public static class MauiProgram
         builder.Services.AddTransient<GameDetailPage>();
         builder.Services.AddTransient<GameItemViewModel>();
         builder.Services.AddSingleton<IGameRepository, GameRepositoryStatic>();
+        builder.Services.AddSingleton<ICoverRepository, CoverRepositoryInMemory>();
         builder.Services.AddSingleton<IGameService, GameService>();
 
         return builder.Build();

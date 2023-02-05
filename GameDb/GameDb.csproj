@@ -52,7 +52,7 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\GameDb.Core\GameDb.Core.csproj" />
-    <ProjectReference Include="..\GameDb.Models\GameDb.Models.csproj" />
+    <ProjectReference Include="..\GameDb.DAL\GameDb.DAL.csproj" />
   </ItemGroup>
   <ItemGroup>
     <Compile Update="GameList.xaml.cs">
@@ -64,4 +64,7 @@
       <Generator>MSBuild:Compile</Generator>
     </MauiXaml>
   </ItemGroup>
+  <Target Name="PostBuild" AfterTargets="PostBuildEvent">
+    <Exec Command="copy &quot;$(SolutionDir)\Tests\GameDb.Models.Test\Fixtures\Cover\11111111-1111-1111-1111-111111111112.png&quot; $(OutDir)&#xD;&#xA;copy &quot;$(SolutionDir)\Tests\GameDb.Models.Test\Fixtures\Cover\21111111-1111-1111-1111-111111111112.png&quot; $(OutDir)" />
+  </Target>
 </Project>

@@ -5,11 +5,13 @@ VisualStudioVersion = 17.0.31611.283
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GameDb", "GameDb\GameDb.csproj", "{02B26038-0592-44CD-A286-60403997F3BE}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GameDb.Models", "GameDb.Models\GameDb.Models.csproj", "{06EC9675-DC85-418F-A0B8-1DB30F0E3EAE}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GameDb.DAL", "GameDb.DAL\GameDb.DAL.csproj", "{06EC9675-DC85-418F-A0B8-1DB30F0E3EAE}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GameDb.Core", "GameDb.Core\GameDb.Core.csproj", "{2910A88B-0720-447B-B748-61CDB68220ED}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GameDb.Test", "Tests\GameDb.Models.Test\GameDb.Test.csproj", "{2527D2C5-29F6-4E98-ADEA-555D91A64179}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GameDb.Common", "GameDb.Common\GameDb.Common.csproj", "{ACE85011-D0CE-4264-9FC1-97C10AE52765}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -35,6 +37,10 @@ Global
 		{2527D2C5-29F6-4E98-ADEA-555D91A64179}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2527D2C5-29F6-4E98-ADEA-555D91A64179}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2527D2C5-29F6-4E98-ADEA-555D91A64179}.Release|Any CPU.Build.0 = Release|Any CPU
+		{ACE85011-D0CE-4264-9FC1-97C10AE52765}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{ACE85011-D0CE-4264-9FC1-97C10AE52765}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{ACE85011-D0CE-4264-9FC1-97C10AE52765}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{ACE85011-D0CE-4264-9FC1-97C10AE52765}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
