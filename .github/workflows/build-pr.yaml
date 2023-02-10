@@ -7,6 +7,11 @@ on:
   workflow_dispatch:
   pull_request:
     types: [opened, synchronize, reopened]
+
+env:
+  DOTNET_NOLOGO: true
+  DOTNET_SKIP_FIRST_TIME_EXPERIENCE: true
+
 jobs:
   build:
     name: Build
@@ -15,16 +20,16 @@ jobs:
       run:
         shell: pwsh
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3
         with:
           fetch-depth: 0  # Shallow clones should be disabled for a better relevancy of analysis
 
 
       # Versioning
       - name: Install .NET Core
-        uses: actions/setup-dotnet@v1
+        uses: actions/setup-dotnet@v3
         with:
-          dotnet-version: 6.x
+          dotnet-version: 7.x
 
       - name: Versioning project's csproj file
         run: |
@@ -58,18 +63,19 @@ jobs:
           
       # Prepare SonarCloud
       - name: Set up JDK 11
-        uses: actions/setup-java@v1
+        uses: actions/setup-java@v3
         with:
-          java-version: 1.11
+          distribution: temurin
+          java-version: 11
       - name: Cache SonarCloud packages
-        uses: actions/cache@v1
+        uses: actions/cache@v3
         with:
           path: ~\sonar\cache
           key: ${{ runner.os }}-sonar
           restore-keys: ${{ runner.os }}-sonar
       - name: Cache SonarCloud scanner
         id: cache-sonar-scanner
-        uses: actions/cache@v1
+        uses: actions/cache@v3
         with:
           path: .\.sonar\scanner
           key: ${{ runner.os }}-sonar-scanner
@@ -83,7 +89,7 @@ jobs:
       # Prepare test coverage analysis
       - name: Cache DotNet Coverage Tool
         id: cache-dotcover
-        uses: actions/cache@v1
+        uses: actions/cache@v3
         with:
           path: .\.net-coverage
           key: ${{ runner.os }}-dotcover
@@ -95,18 +101,22 @@ jobs:
           dotnet tool update JetBrains.dotCover.GlobalTool --tool-path ./.net-coverage
 
       # Build Project
-      - uses: actions/cache@v3
-        name: Cache nuget packages
+      - name: Cache nuget packages- 
+        uses: actions/cache@v3
+        id: cache-nuget
         with:
           path: ~/.nuget/packages
           key: ${{ runner.os }}-nuget-${{ hashFiles('**/packages.lock.json') }}
           restore-keys: |
             ${{ runner.os }}-nuget-
+
+      #- name: Install Workloads
+      #  run: |
+      #    dotnet workload install maui maui-android maui-ios maui-maccatalyst maui-windows
       
-      - name: Restore project
-        run: |
-          dotnet workload restore
-          dotnet restore --locked-mode
+      - name: Install Dependencies
+        if: steps.cache-nuget.outputs.cache-hit != 'true'
+        run: dotnet restore --locked-mode
 
       - name: Init SonarCloud Analyzer
         env:
@@ -122,7 +132,7 @@ jobs:
           /d:sonar.cs.dotcover.reportsPaths=dotCover.Output.html
 
       - name: Build Project
-        run: dotnet build -c Release --no-incremental --nologo
+        run: dotnet build -c Release --no-incremental
 
       - name: Calculate UnitTests Code Coverage
         run: .\.net-coverage\dotnet-dotcover test --dcReportType=HTML --dcXml=dotCoverConfig.xml

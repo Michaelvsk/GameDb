@@ -13,7 +13,7 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3
         with:
           fetch-depth: 0
           token: ${{ secrets.GH_ADMIN_TOKEN }}
@@ -28,8 +28,8 @@ jobs:
         run: >
           npm install --global auto@10.37.1 @auto-it/released@10.37.1 @auto-it/git-tag@10.37.1 @auto-it/first-time-contributor@10.37.1 
 
-      # dotnet version relies on .NET Core 2.1 (TODO maybe fork dotnet version as .NET 2.1 reached EOL)
-      - uses: actions/setup-dotnet@v1
+      # dotnet version relies on .NET Core 2.1 (TODO maybe fork project dotnet version as .NET 2.1 reached EOL)
+      - uses: actions/setup-dotnet@v3
         with:
           dotnet-version: '2.1.x'
 
