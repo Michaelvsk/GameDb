@@ -1,3 +1,21 @@
+# v0.1.0 (Fri Feb 10 2023)
+
+#### 🚀 Enhancement
+
+- feat: add game service to load game information [#13](https://github.com/Michaelvsk/GameDb/pull/13) ([@Michaelvsk](https://github.com/Michaelvsk))
+
+#### 🏠 Internal
+
+- ci: fix build automation [#14](https://github.com/Michaelvsk/GameDb/pull/14) ([@Michaelvsk](https://github.com/Michaelvsk))
+- feat: Add game service [#5](https://github.com/Michaelvsk/GameDb/pull/5) ([@Michaelvsk](https://github.com/Michaelvsk))
+- ci: fix versioning [#12](https://github.com/Michaelvsk/GameDb/pull/12) ([@Michaelvsk](https://github.com/Michaelvsk))
+
+#### Authors: 1
+
+- Michael Keller ([@Michaelvsk](https://github.com/Michaelvsk))
+
+---
+
 # v0.0.2 (Thu Jun 30 2022)
 
 #### 🐛 Bug Fix
