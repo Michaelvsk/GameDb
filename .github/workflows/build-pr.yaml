@@ -106,7 +106,7 @@ jobs:
       
       - name: Restore project
         run: |
-          dotnet workload restore
+          dotnet workload restore .\GameDb.sln
           dotnet restore --locked-mode
 
       - name: Init SonarCloud Analyzer
