@@ -4,7 +4,7 @@
     <Company>Michaelvsk</Company>
     <Authors>Michael Keller</Authors>
     <Product>GameDb</Product>
-    <AssemblyVersion>0.0.2</AssemblyVersion>
+    <AssemblyVersion>0.1.0</AssemblyVersion>
   </PropertyGroup>
   <PropertyGroup>
     <TargetFramework>net7.0</TargetFramework>
@@ -14,16 +14,13 @@
     <RootNamespace>Michaelvsk.$(MSBuildProjectName.Replace(" ", "_"))</RootNamespace>
     <RestorePackagesWithLockFile>true</RestorePackagesWithLockFile>
   </PropertyGroup>
-
   <ItemGroup>
     <PackageReference Include="CommunityToolkit.Diagnostics" Version="8.0.0-preview4" />
     <PackageReference Include="OneOf" Version="3.0.223" />
   </ItemGroup>
-
   <ItemGroup>
     <ProjectReference Include="..\GameDb.Common\GameDb.Common.csproj" />
   </ItemGroup>
-
   <ItemGroup>
     <Compile Update="DummyImpl\Resources\Covers.Designer.cs">
       <DesignTime>True</DesignTime>
@@ -31,14 +28,12 @@
       <DependentUpon>Covers.resx</DependentUpon>
     </Compile>
   </ItemGroup>
-
   <ItemGroup>
     <EmbeddedResource Update="DummyImpl\Resources\Covers.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Covers.Designer.cs</LastGenOutput>
     </EmbeddedResource>
   </ItemGroup>
-
   <ItemGroup>
     <None Update="DummyImpl\Resources\Covers\11111111-1111-1111-1111-111111111112.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
@@ -47,5 +42,4 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
   </ItemGroup>
-
 </Project>

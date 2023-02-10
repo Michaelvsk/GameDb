@@ -4,7 +4,7 @@
     <Company>Michaelvsk</Company>
     <Authors>Michael Keller</Authors>
     <Product>GameDb</Product>
-    <AssemblyVersion>0.0.2</AssemblyVersion>
+    <AssemblyVersion>0.1.0</AssemblyVersion>
   </PropertyGroup>
   <PropertyGroup>
     <TargetFramework>net7.0</TargetFramework>
@@ -19,11 +19,9 @@
     <EmbeddedResource Remove="Interfaces\**" />
     <None Remove="Interfaces\**" />
   </ItemGroup>
-
   <ItemGroup>
     <PackageReference Include="OneOf" Version="3.0.223" />
   </ItemGroup>
-
   <ItemGroup>
     <ProjectReference Include="..\GameDb.Common\GameDb.Common.csproj" />
     <ProjectReference Include="..\GameDb.DAL\GameDb.DAL.csproj" />
