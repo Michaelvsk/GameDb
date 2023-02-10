@@ -101,18 +101,22 @@ jobs:
           dotnet tool update JetBrains.dotCover.GlobalTool --tool-path ./.net-coverage
 
       # Build Project
-      - uses: actions/cache@v3
-        name: Cache nuget packages
+      - name: Cache nuget packages- 
+        uses: actions/cache@v3
+        id: cache-nuget
         with:
           path: ~/.nuget/packages
           key: ${{ runner.os }}-nuget-${{ hashFiles('**/packages.lock.json') }}
           restore-keys: |
             ${{ runner.os }}-nuget-
+
+      #- name: Install Workloads
+      #  run: |
+      #    dotnet workload install maui maui-android maui-ios maui-maccatalyst maui-windows
       
-      - name: Install Workloads & Dependencies
-        run: |
-          dotnet workload install maui maui-android maui-ios maui-maccatalyst maui-windows
-          dotnet restore --locked-mode
+      - name: Install Dependencies
+        if: steps.cache-nuget.outputs.cache-hit != 'true'
+        run: dotnet restore --locked-mode
 
       - name: Init SonarCloud Analyzer
         env:
