@@ -8,6 +8,10 @@ on:
         required: false
         type: boolean
         default: true
+    secrets:
+      SONAR_TOKEN:
+        required: true
+        description: Authenticate against SonarCloud for static code analysis
 
 env:
   DOTNET_NOLOGO: true

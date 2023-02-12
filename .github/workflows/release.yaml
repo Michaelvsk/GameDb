@@ -68,6 +68,8 @@ jobs:
     uses: ./.github/workflows/wf-build.yaml
     with:
       append-build-number: false
+    secrets:
+      SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
 
   release:
     name: Create Release
