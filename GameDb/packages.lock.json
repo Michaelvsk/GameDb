@@ -13,9 +13,9 @@
       },
       "CommunityToolkit.Mvvm": {
         "type": "Direct",
-        "requested": "[8.0.0-preview4, )",
-        "resolved": "8.0.0-preview4",
-        "contentHash": "8lE/McOD+JirXsaxYpAHdVTLpljCgESQ/7z4c5sXw6lrkpzYeyRlMQ/sTVNP9k40EIxIY+8FkTupmHcIWsMrvw=="
+        "requested": "[8.1.0, )",
+        "resolved": "8.1.0",
+        "contentHash": "xxOt7lu9a5kB5Fs9RfcxzVlKnhuuPe+w7AXHtmCFtS3oldrsUhEMxHfNulluXSscUUoGxZ0jh55Om12ZP6abHA=="
       },
       "Microsoft.Extensions.Configuration": {
         "type": "Direct",
@@ -1000,9 +1000,9 @@
       },
       "CommunityToolkit.Mvvm": {
         "type": "Direct",
-        "requested": "[8.0.0-preview4, )",
-        "resolved": "8.0.0-preview4",
-        "contentHash": "8lE/McOD+JirXsaxYpAHdVTLpljCgESQ/7z4c5sXw6lrkpzYeyRlMQ/sTVNP9k40EIxIY+8FkTupmHcIWsMrvw=="
+        "requested": "[8.1.0, )",
+        "resolved": "8.1.0",
+        "contentHash": "xxOt7lu9a5kB5Fs9RfcxzVlKnhuuPe+w7AXHtmCFtS3oldrsUhEMxHfNulluXSscUUoGxZ0jh55Om12ZP6abHA=="
       },
       "Microsoft.Extensions.Configuration": {
         "type": "Direct",
@@ -1131,9 +1131,9 @@
       },
       "CommunityToolkit.Mvvm": {
         "type": "Direct",
-        "requested": "[8.0.0-preview4, )",
-        "resolved": "8.0.0-preview4",
-        "contentHash": "8lE/McOD+JirXsaxYpAHdVTLpljCgESQ/7z4c5sXw6lrkpzYeyRlMQ/sTVNP9k40EIxIY+8FkTupmHcIWsMrvw=="
+        "requested": "[8.1.0, )",
+        "resolved": "8.1.0",
+        "contentHash": "xxOt7lu9a5kB5Fs9RfcxzVlKnhuuPe+w7AXHtmCFtS3oldrsUhEMxHfNulluXSscUUoGxZ0jh55Om12ZP6abHA=="
       },
       "Microsoft.Extensions.Configuration": {
         "type": "Direct",
@@ -1262,9 +1262,9 @@
       },
       "CommunityToolkit.Mvvm": {
         "type": "Direct",
-        "requested": "[8.0.0-preview4, )",
-        "resolved": "8.0.0-preview4",
-        "contentHash": "8lE/McOD+JirXsaxYpAHdVTLpljCgESQ/7z4c5sXw6lrkpzYeyRlMQ/sTVNP9k40EIxIY+8FkTupmHcIWsMrvw=="
+        "requested": "[8.1.0, )",
+        "resolved": "8.1.0",
+        "contentHash": "xxOt7lu9a5kB5Fs9RfcxzVlKnhuuPe+w7AXHtmCFtS3oldrsUhEMxHfNulluXSscUUoGxZ0jh55Om12ZP6abHA=="
       },
       "Microsoft.Extensions.Configuration": {
         "type": "Direct",
