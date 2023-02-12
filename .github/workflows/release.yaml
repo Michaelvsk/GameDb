@@ -65,7 +65,7 @@ jobs:
          GITHUB_TOKEN: ${{secrets.GH_ADMIN_TOKEN}}
 
   build:
-    uses: .github/workflows/reusable/build.yml
+    uses: ./.github/workflows/reusable/build.yaml
     with:
       append-build-number: false
 
