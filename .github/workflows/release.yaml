@@ -7,11 +7,9 @@ on:
     branches: [ main ]
 
 jobs:
-  release:
-    name: Release
-    if: false == endsWith(github.event.head_commit.message, '[release]')
+  bump-version:
+    name: Bump Version
     runs-on: ubuntu-latest
-
     steps:
       - uses: actions/checkout@v3
         with:
@@ -56,7 +54,6 @@ jobs:
             if VERSION_NO=$(xmlstarlet  sel -t -m '/Project/PropertyGroup/AssemblyVersion' -v . < ./GameDb/GameDb.csproj 2>&1); then
               echo "Extracted version number is ${VERSION_NO}"
               git commit -a -m "chore(release): $VERSION_NO [skip ci]"
-              auto shipit
             else
               echo "Extracting version from csproj file failed. Error: ${VERSION_NO}"
               exit 1
@@ -66,3 +63,46 @@ jobs:
           fi
         env:
          GITHUB_TOKEN: ${{secrets.GH_ADMIN_TOKEN}}
+
+  build:
+    uses: reusable/build.yaml
+    with:
+      append-build-number: false
+
+  release:
+    name: Create Release
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+          token: ${{ secrets.GH_ADMIN_TOKEN }}
+
+      - name: Setup GIT
+        run: |
+          git config user.email "$GITHUB_ACTOR@users.noreply.github.com"
+          git config user.name "$GITHUB_ACTOR"
+
+      # Compute version based on Github PR labels
+      - name: Install auto versioning
+        run: >
+          npm install --global
+          auto@10.37.1
+          @auto-it/released@10.37.1
+          @auto-it/git-tag@10.37.1
+          @auto-it/first-time-contributor@10.37.1
+          @auto-it/upload-assets@10.37.1
+
+      - uses: actions/download-artifact@v3
+        with:
+          name: android-build
+          path: artifact
+
+      - uses: actions/download-artifact@v3
+        with:
+          name: windows-build
+          path: artifact
+
+      - name: Check Artifact folder
+        working-directory: artifact
+        run: tree 

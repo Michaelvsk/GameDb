@@ -40,6 +40,7 @@
     </None>
   </ItemGroup>
   <Target Name="PostBuild" AfterTargets="PostBuildEvent">
-    <Exec Command="copy &quot;$(SolutionDir)\Tests\GameDb.Models.Test\Fixtures\Cover\11111111-1111-1111-1111-111111111112.png&quot; $(OutDir)&#xD;&#xA;copy &quot;$(SolutionDir)\Tests\GameDb.Models.Test\Fixtures\Cover\21111111-1111-1111-1111-111111111112.png&quot; $(OutDir)" />
+    <Exec
+      Command="copy &quot;$(SolutionDir)\Tests\GameDb.Models.Test\Fixtures\Cover\11111111-1111-1111-1111-111111111112.png&quot; $(OutDir)&#xD;&#xA;copy &quot;$(SolutionDir)\Tests\GameDb.Models.Test\Fixtures\Cover\21111111-1111-1111-1111-111111111112.png&quot; $(OutDir)" />
   </Target>
 </Project>

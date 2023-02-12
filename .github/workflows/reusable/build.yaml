@@ -1,0 +1,153 @@
+name: Build .NET MAUI App
+
+on:
+  workflow_call:
+    inputs:
+      append-build-number:
+        description: Wether the build number should be added to assembly version of DLLs or not.
+        required: false
+        type: boolean
+        default: true
+
+env:
+  DOTNET_NOLOGO: true
+  DOTNET_SKIP_FIRST_TIME_EXPERIENCE: true
+
+jobs:
+  build:
+    name: Build
+    runs-on: windows-latest
+    defaults:
+      run:
+        shell: pwsh
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          fetch-depth: 0  # Shallow clones should be disabled for a better relevancy of analysis
+
+      # Versioning
+      - name: Install .NET Core
+        uses: actions/setup-dotnet@v3
+        with:
+          dotnet-version: 7.x
+
+      - name: Versioning project's csproj file
+        if: ${{ inputs. append-build-number }}
+        run: |
+          $cprojFiles = @( `
+            "./GameDb/GameDb.csproj",
+            "./GameDb.Common/GameDb.Common.csproj",
+            "./GameDb.Core/GameDb.Core.csproj", 
+            "./GameDb.DAL/GameDb.DAL.csproj"
+          )
+
+          foreach($proj in $cprojFiles) {
+            $versionNo = Select-Xml -XPath "/Project/PropertyGroup/AssemblyVersion" -Path $proj | %{$_.node.InnerXML}
+          
+            # if fails to extract version number, then let workflow fail
+            Write-Host "Extracted version is: $versionNo"
+            if ($versionNo -eq $null) {
+              Write-Host "::error ::Failed to read version number from project file."
+              exit 1
+            }              
+            
+            # append build number if requested
+            if ($env:GITHUB_REF_NAME -ne "main") {
+              Write-Host "Appending build number to version"
+              $versionNo="$versionNo.$env:GITHUB_RUN_ID"
+            }
+            Write-Host "Using version '$versionNo' for this build artifact"
+            Add-Content $env:GITHUB_ENV "artifact_version=$versionNo"
+          }
+
+      # Prepare SonarCloud
+      - name: Set up JDK 11
+        uses: actions/setup-java@v3
+        with:
+          distribution: microsoft
+          java-version: 11
+      - name: Cache SonarCloud packages
+        uses: actions/cache@v3
+        with:
+          path: ~\sonar\cache
+          key: ${{ runner.os }}-sonar
+          restore-keys: ${{ runner.os }}-sonar
+      - name: Cache SonarCloud scanner
+        id: cache-sonar-scanner
+        uses: actions/cache@v3
+        with:
+          path: .\.sonar\scanner
+          key: ${{ runner.os }}-sonar-scanner
+          restore-keys: ${{ runner.os }}-sonar-scanner
+      - name: Install SonarCloud scanner
+        if: steps.cache-sonar-scanner.outputs.cache-hit != 'true'
+        run: |
+          New-Item -Path .\.sonar\scanner -ItemType Directory
+          dotnet tool update dotnet-sonarscanner --tool-path ./.sonar/scanner
+
+      # Prepare test coverage analysis
+      - name: Cache DotNet Coverage Tool
+        id: cache-dotcover
+        uses: actions/cache@v3
+        with:
+          path: .\.net-coverage
+          key: ${{ runner.os }}-dotcover
+          restore-keys: ${{ runner.os }}-dotcover
+      - name: Install DotNet Coverage Tool
+        if: steps.cache-dotcover.outputs.cache-hit != 'true'
+        run: |
+          New-Item -Path .\.net-coverage -ItemType Directory
+          dotnet tool update JetBrains.dotCover.GlobalTool --tool-path ./.net-coverage
+
+      # Build Project
+      - name: Cache nuget packages- 
+        uses: actions/cache@v3
+        id: cache-nuget
+        with:
+          path: ~/.nuget/packages
+          key: ${{ runner.os }}-nuget-${{ hashFiles('**/packages.lock.json') }}
+          restore-keys: |
+            ${{ runner.os }}-nuget-
+
+      - name: Install Dependencies
+        if: steps.cache-nuget.outputs.cache-hit != 'true'
+        run: dotnet restore --locked-mode
+
+      - name: Init SonarCloud Analyzer
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}  # Needed to get PR information, if any
+          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+        run: >
+          .\.sonar\scanner\dotnet-sonarscanner begin
+          /k:"Michaelvsk_GameDb"
+          /o:"github-michaelvsk"
+          /d:sonar.login="${{ secrets.SONAR_TOKEN }}"
+          /d:sonar.host.url="https://sonarcloud.io"
+          /v:="${{ env.artifact_version }}"
+          /d:sonar.cs.dotcover.reportsPaths=dotCover.Output.html
+
+      - name: Build Project
+        run: |
+          dotnet build -c Release --no-incremental ---no-restore
+          dotnet publish .\GameDb\GameDb.csproj -c Release -f:net7.0-windows10.0.19041.0 /p:GenerateAppxPackageOnBuild=true
+
+      - name: Calculate UnitTests Code Coverage
+        run: .\.net-coverage\dotnet-dotcover test --dcReportType=HTML --dcXml=dotCoverConfig.xml
+
+      - name: Finish SonarCloud Analyzer
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}  # Needed to get PR information, if any
+          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+        run: .\.sonar\scanner\dotnet-sonarscanner end /d:sonar.login="${{ secrets.SONAR_TOKEN }}"
+
+      - name: Upload Android Artifact
+        uses: actions/upload-artifact@v3
+        with:
+          name: android-build
+          path: .\GameDb\bin\Release\net7.0-android\*Signed.a*
+
+      - name: Upload Windows Artifact
+        uses: actions/upload-artifact@v3
+        with:
+          name: windows-build
+          path: .\GameDb\**\AppPackages\**\*.*

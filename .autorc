@@ -2,7 +2,13 @@
   "plugins": [
     "git-tag",
     "first-time-contributor",
-    "released"
+    "released",
+    [
+      "upload-assets",
+      [
+        "./artifact/**/*"
+      ]
+    ]
   ],
   "owner": "Michaelvsk",
   "repo": "GameDb",
