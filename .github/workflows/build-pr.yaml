@@ -14,4 +14,4 @@ env:
 
 jobs:
   Build:
-    uses: reusable/build.yml
+    uses: .github/workflows/reusable/build.yml
