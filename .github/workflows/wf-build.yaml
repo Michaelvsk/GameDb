@@ -132,7 +132,8 @@ jobs:
 
       - name: Build Project
         run: |
-          dotnet build -c Release --no-incremental ---no-restore
+          dotnet build -c Release --no-incremental --no-restore
+          tree /F .\GameDb\bin\Release\net7.0-android\
           dotnet publish .\GameDb\GameDb.csproj -c Release -f:net7.0-windows10.0.19041.0 /p:GenerateAppxPackageOnBuild=true
 
       - name: Calculate UnitTests Code Coverage
