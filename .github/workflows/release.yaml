@@ -123,9 +123,6 @@ jobs:
         with:
           name: windows-build
           path: windows-artifact
-      
-      - name: Check Artifact folder
-        run: tree 
 
       - name: ZIP Windows Build
         run: zip -r -9 windows-build.zip windows-artifact
