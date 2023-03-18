@@ -1,3 +1,20 @@
+# v0.1.1 (Sat Mar 18 2023)
+
+#### 🐛 Bug Fix
+
+- ci: fix release file path [#17](https://github.com/Michaelvsk/GameDb/pull/17) ([@Michaelvsk](https://github.com/Michaelvsk))
+
+#### 🏠 Internal
+
+- ci: separate changelog from release creation [#16](https://github.com/Michaelvsk/GameDb/pull/16) ([@Michaelvsk](https://github.com/Michaelvsk))
+- ci: improve release process [#15](https://github.com/Michaelvsk/GameDb/pull/15) ([@Michaelvsk](https://github.com/Michaelvsk))
+
+#### Authors: 1
+
+- Michael Keller ([@Michaelvsk](https://github.com/Michaelvsk))
+
+---
+
 # v0.1.0 (Fri Feb 10 2023)
 
 #### 🚀 Enhancement
