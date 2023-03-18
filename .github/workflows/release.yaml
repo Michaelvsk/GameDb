@@ -64,6 +64,7 @@ jobs:
               echo "git status:"
               git status
               git commit -a -m "chore(release): Bump assembly versions ${VERSION_NO} [skip ci]"
+              auto changelog
 
               echo "version=${VERSION_NO}" >> "$GITHUB_OUTPUT"
               echo "commit=`git rev-parse --verify HEAD`" >> "$GITHUB_OUTPUT"
@@ -124,13 +125,12 @@ jobs:
           name: windows-build
           path: windows-artifact
 
-      - name: ZIP Windows Build
-        run: zip -r -9 windows-build.zip windows-artifact
+      - name: Zip Builds
+        run: |
+          zip -r -9 windows-build.zip windows-artifact
+          zip -r -9 android-build.zip android-artifact
 
-      - name: ZIP Android Build
-        run: zip -r -9 android-build.zip android-artifact
-
-      - name: Testing release
-        run: auto shipit --only-graduate-with-release-label
+      - name: Create Release
+        run: auto shipit --only-graduate-with-release-label --no-changelog
         env:
          GH_TOKEN: ${{secrets.GH_ADMIN_TOKEN}}
