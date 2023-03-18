@@ -4,20 +4,18 @@
     "net7.0-android33.0": {
       "CommunityToolkit.Maui": {
         "type": "Direct",
-        "requested": "[1.0.0, )",
-        "resolved": "1.0.0",
-        "contentHash": "FxodTRrBtspZX7Z8rORLCUKnwbFg5PCgzwzSuMjZ9+GjAN3fchaOkZ160924cPvc8olDupgs4+BWoMYouggFKw==",
+        "requested": "[4.0.0, )",
+        "resolved": "4.0.0",
+        "contentHash": "76XJVmDRXoKooARQK7tuwvjAnOwF39nmNoRhHGU1cpElJuKZ4v5Y1QlkSJjxaNaubY4JyplZiDPXK60dsEoPRg==",
         "dependencies": {
-          "CommunityToolkit.Maui.Core": "1.0.0",
-          "Microsoft.Maui.Dependencies": "6.0.312",
-          "Microsoft.Maui.Extensions": "6.0.312"
+          "CommunityToolkit.Maui.Core": "4.0.0"
         }
       },
       "CommunityToolkit.Mvvm": {
         "type": "Direct",
-        "requested": "[8.0.0-preview4, )",
-        "resolved": "8.0.0-preview4",
-        "contentHash": "8lE/McOD+JirXsaxYpAHdVTLpljCgESQ/7z4c5sXw6lrkpzYeyRlMQ/sTVNP9k40EIxIY+8FkTupmHcIWsMrvw=="
+        "requested": "[8.1.0, )",
+        "resolved": "8.1.0",
+        "contentHash": "xxOt7lu9a5kB5Fs9RfcxzVlKnhuuPe+w7AXHtmCFtS3oldrsUhEMxHfNulluXSscUUoGxZ0jh55Om12ZP6abHA=="
       },
       "Microsoft.Extensions.Configuration": {
         "type": "Direct",
@@ -217,17 +215,13 @@
       },
       "CommunityToolkit.Diagnostics": {
         "type": "Transitive",
-        "resolved": "8.0.0-preview4",
-        "contentHash": "m9L7cNLFqr61wQfUUHAF/LKsq7Ig+aUrOtURIUcGLniMfNDJW+45KuJRp7F4VUHK1gDkNTOUsmrx5b0nj2y2zw=="
+        "resolved": "8.1.0",
+        "contentHash": "R9h5uw8W2ADbmzrJpUJHH7cBpOE2g7jJ0mL/6sJEucfDvTWk3Uq/d4ZgWfVsQTf+MX8wAsWEYsc+UNfeZ3o6LQ=="
       },
       "CommunityToolkit.Maui.Core": {
         "type": "Transitive",
-        "resolved": "1.0.0",
-        "contentHash": "6/+t2fNswAgDQnjofpbZpd/KTbaysdnVOwJ8FWaJW6hq3i8WfsTiZ02WOyZYsdZZRD3GKxR2I5qi0OyjIC/0MA==",
-        "dependencies": {
-          "Microsoft.Maui.Dependencies": "6.0.312",
-          "Microsoft.Maui.Extensions": "6.0.312"
-        }
+        "resolved": "4.0.0",
+        "contentHash": "UBlKxyJisLvbZJvi9o125erFl1bMDSBDvkfgdUFiCt6nTVLA+c3y22LMz1poY7s+zmE2A5iphmqT1SWnkTNWAg=="
       },
       "GoogleGson": {
         "type": "Transitive",
@@ -260,36 +254,6 @@
         "type": "Transitive",
         "resolved": "7.0.0",
         "contentHash": "um1KU5kxcRp3CNuI8o/GrZtD4AIOXDk+RLsytjZ9QPok3ttLUelLKpilVPuaFT3TFjOhSibUAso0odbOaCDj3Q=="
-      },
-      "Microsoft.Maui.Dependencies": {
-        "type": "Transitive",
-        "resolved": "6.0.312",
-        "contentHash": "gP9AD+AGTVODdPBFKGazFOynEo/xyZGScs3CKbbgVZUMt+CWWzHXr+0yWPvcIoD8KlNwT2FFoGwMqRYITBkDRA==",
-        "dependencies": {
-          "Microsoft.Maui.Graphics": "6.0.300",
-          "Xamarin.Android.Glide": "4.12.0.8",
-          "Xamarin.AndroidX.Browser": "1.4.0.1",
-          "Xamarin.AndroidX.Legacy.Support.V4": "1.0.0.13",
-          "Xamarin.AndroidX.Lifecycle.LiveData": "2.4.1.1",
-          "Xamarin.AndroidX.Navigation.Common": "2.4.2",
-          "Xamarin.AndroidX.Navigation.Fragment": "2.4.2",
-          "Xamarin.AndroidX.Navigation.Runtime": "2.4.2",
-          "Xamarin.AndroidX.Navigation.UI": "2.4.2",
-          "Xamarin.AndroidX.Security.SecurityCrypto": "1.1.0-alpha03",
-          "Xamarin.Google.Android.Material": "1.5.0.2",
-          "Xamarin.Google.Crypto.Tink.Android": "1.6.1.6"
-        }
-      },
-      "Microsoft.Maui.Extensions": {
-        "type": "Transitive",
-        "resolved": "6.0.312",
-        "contentHash": "2TMDnvgIK76x6x0bpkwEDSdGUBETUxPBK6SkoERQ2CfeQa8SG7PJLexLASo+foXf8yV79aeBQ0ttoz6+1OlXEw==",
-        "dependencies": {
-          "Microsoft.Extensions.Configuration": "6.0.1",
-          "Microsoft.Extensions.DependencyInjection": "6.0.0",
-          "Microsoft.Extensions.Logging": "6.0.0",
-          "Microsoft.Extensions.Logging.Abstractions": "6.0.1"
-        }
       },
       "OneOf": {
         "type": "Transitive",
@@ -997,7 +961,7 @@
       "Michaelvsk.GameDb.Common": {
         "type": "Project",
         "dependencies": {
-          "CommunityToolkit.Diagnostics": "[8.0.0-preview4, )"
+          "CommunityToolkit.Diagnostics": "[8.1.0, )"
         }
       },
       "Michaelvsk.GameDb.Core": {
@@ -1011,7 +975,7 @@
       "Michaelvsk.GameDb.DAL": {
         "type": "Project",
         "dependencies": {
-          "CommunityToolkit.Diagnostics": "[8.0.0-preview4, )",
+          "CommunityToolkit.Diagnostics": "[8.1.0, )",
           "Michaelvsk.GameDb.Common": "[1.0.0, )",
           "OneOf": "[3.0.223, )"
         }
@@ -1022,26 +986,24 @@
     "net7.0-android33.0/android-x64": {},
     "net7.0-android33.0/android-x86": {},
     "net7.0-android33.0/iossimulator-x64": {},
+    "net7.0-android33.0/maccatalyst-arm64": {},
     "net7.0-android33.0/maccatalyst-x64": {},
     "net7.0-android33.0/win10-x64": {},
     "net7.0-ios16.1": {
       "CommunityToolkit.Maui": {
         "type": "Direct",
-        "requested": "[1.0.0, )",
-        "resolved": "1.0.0",
-        "contentHash": "FxodTRrBtspZX7Z8rORLCUKnwbFg5PCgzwzSuMjZ9+GjAN3fchaOkZ160924cPvc8olDupgs4+BWoMYouggFKw==",
+        "requested": "[4.0.0, )",
+        "resolved": "4.0.0",
+        "contentHash": "76XJVmDRXoKooARQK7tuwvjAnOwF39nmNoRhHGU1cpElJuKZ4v5Y1QlkSJjxaNaubY4JyplZiDPXK60dsEoPRg==",
         "dependencies": {
-          "CommunityToolkit.Maui.Core": "1.0.0",
-          "Microsoft.Maui.Dependencies": "6.0.312",
-          "Microsoft.Maui.Extensions": "6.0.312",
-          "System.Runtime.InteropServices.NFloat.Internal": "6.0.1"
+          "CommunityToolkit.Maui.Core": "4.0.0"
         }
       },
       "CommunityToolkit.Mvvm": {
         "type": "Direct",
-        "requested": "[8.0.0-preview4, )",
-        "resolved": "8.0.0-preview4",
-        "contentHash": "8lE/McOD+JirXsaxYpAHdVTLpljCgESQ/7z4c5sXw6lrkpzYeyRlMQ/sTVNP9k40EIxIY+8FkTupmHcIWsMrvw=="
+        "requested": "[8.1.0, )",
+        "resolved": "8.1.0",
+        "contentHash": "xxOt7lu9a5kB5Fs9RfcxzVlKnhuuPe+w7AXHtmCFtS3oldrsUhEMxHfNulluXSscUUoGxZ0jh55Om12ZP6abHA=="
       },
       "Microsoft.Extensions.Configuration": {
         "type": "Direct",
@@ -1088,18 +1050,13 @@
       },
       "CommunityToolkit.Diagnostics": {
         "type": "Transitive",
-        "resolved": "8.0.0-preview4",
-        "contentHash": "m9L7cNLFqr61wQfUUHAF/LKsq7Ig+aUrOtURIUcGLniMfNDJW+45KuJRp7F4VUHK1gDkNTOUsmrx5b0nj2y2zw=="
+        "resolved": "8.1.0",
+        "contentHash": "R9h5uw8W2ADbmzrJpUJHH7cBpOE2g7jJ0mL/6sJEucfDvTWk3Uq/d4ZgWfVsQTf+MX8wAsWEYsc+UNfeZ3o6LQ=="
       },
       "CommunityToolkit.Maui.Core": {
         "type": "Transitive",
-        "resolved": "1.0.0",
-        "contentHash": "6/+t2fNswAgDQnjofpbZpd/KTbaysdnVOwJ8FWaJW6hq3i8WfsTiZ02WOyZYsdZZRD3GKxR2I5qi0OyjIC/0MA==",
-        "dependencies": {
-          "Microsoft.Maui.Dependencies": "6.0.312",
-          "Microsoft.Maui.Extensions": "6.0.312",
-          "System.Runtime.InteropServices.NFloat.Internal": "6.0.1"
-        }
+        "resolved": "4.0.0",
+        "contentHash": "UBlKxyJisLvbZJvi9o125erFl1bMDSBDvkfgdUFiCt6nTVLA+c3y22LMz1poY7s+zmE2A5iphmqT1SWnkTNWAg=="
       },
       "Microsoft.Extensions.Configuration.Abstractions": {
         "type": "Transitive",
@@ -1128,41 +1085,15 @@
         "resolved": "7.0.0",
         "contentHash": "um1KU5kxcRp3CNuI8o/GrZtD4AIOXDk+RLsytjZ9QPok3ttLUelLKpilVPuaFT3TFjOhSibUAso0odbOaCDj3Q=="
       },
-      "Microsoft.Maui.Dependencies": {
-        "type": "Transitive",
-        "resolved": "6.0.312",
-        "contentHash": "gP9AD+AGTVODdPBFKGazFOynEo/xyZGScs3CKbbgVZUMt+CWWzHXr+0yWPvcIoD8KlNwT2FFoGwMqRYITBkDRA==",
-        "dependencies": {
-          "Microsoft.Maui.Graphics": "6.0.300",
-          "System.Runtime.InteropServices.NFloat.Internal": "6.0.1"
-        }
-      },
-      "Microsoft.Maui.Extensions": {
-        "type": "Transitive",
-        "resolved": "6.0.312",
-        "contentHash": "2TMDnvgIK76x6x0bpkwEDSdGUBETUxPBK6SkoERQ2CfeQa8SG7PJLexLASo+foXf8yV79aeBQ0ttoz6+1OlXEw==",
-        "dependencies": {
-          "Microsoft.Extensions.Configuration": "6.0.1",
-          "Microsoft.Extensions.DependencyInjection": "6.0.0",
-          "Microsoft.Extensions.Logging": "6.0.0",
-          "Microsoft.Extensions.Logging.Abstractions": "6.0.1",
-          "System.Runtime.InteropServices.NFloat.Internal": "6.0.1"
-        }
-      },
       "OneOf": {
         "type": "Transitive",
         "resolved": "3.0.223",
         "contentHash": "YWabiHBFfDdKIO7/TEa72mARVVo5u5FqFnfXuTqjIupMvJlhoH8d0m4uKtczaINuT0vGR1qlXJayeU6bTw5myg=="
       },
-      "System.Runtime.InteropServices.NFloat.Internal": {
-        "type": "Transitive",
-        "resolved": "6.0.1",
-        "contentHash": "vq+81ZqZz9oHV6iWgGXFnxHAyO5xA73nfvDNu5LwymIK294is5bRo3P063VToAbDRyyc0qq/YFRYjHmiD6Cv8Q=="
-      },
       "Michaelvsk.GameDb.Common": {
         "type": "Project",
         "dependencies": {
-          "CommunityToolkit.Diagnostics": "[8.0.0-preview4, )"
+          "CommunityToolkit.Diagnostics": "[8.1.0, )"
         }
       },
       "Michaelvsk.GameDb.Core": {
@@ -1176,7 +1107,7 @@
       "Michaelvsk.GameDb.DAL": {
         "type": "Project",
         "dependencies": {
-          "CommunityToolkit.Diagnostics": "[8.0.0-preview4, )",
+          "CommunityToolkit.Diagnostics": "[8.1.0, )",
           "Michaelvsk.GameDb.Common": "[1.0.0, )",
           "OneOf": "[3.0.223, )"
         }
@@ -1187,26 +1118,24 @@
     "net7.0-ios16.1/android-x64": {},
     "net7.0-ios16.1/android-x86": {},
     "net7.0-ios16.1/iossimulator-x64": {},
+    "net7.0-ios16.1/maccatalyst-arm64": {},
     "net7.0-ios16.1/maccatalyst-x64": {},
     "net7.0-ios16.1/win10-x64": {},
     "net7.0-maccatalyst16.1": {
       "CommunityToolkit.Maui": {
         "type": "Direct",
-        "requested": "[1.0.0, )",
-        "resolved": "1.0.0",
-        "contentHash": "FxodTRrBtspZX7Z8rORLCUKnwbFg5PCgzwzSuMjZ9+GjAN3fchaOkZ160924cPvc8olDupgs4+BWoMYouggFKw==",
+        "requested": "[4.0.0, )",
+        "resolved": "4.0.0",
+        "contentHash": "76XJVmDRXoKooARQK7tuwvjAnOwF39nmNoRhHGU1cpElJuKZ4v5Y1QlkSJjxaNaubY4JyplZiDPXK60dsEoPRg==",
         "dependencies": {
-          "CommunityToolkit.Maui.Core": "1.0.0",
-          "Microsoft.Maui.Dependencies": "6.0.312",
-          "Microsoft.Maui.Extensions": "6.0.312",
-          "System.Runtime.InteropServices.NFloat.Internal": "6.0.1"
+          "CommunityToolkit.Maui.Core": "4.0.0"
         }
       },
       "CommunityToolkit.Mvvm": {
         "type": "Direct",
-        "requested": "[8.0.0-preview4, )",
-        "resolved": "8.0.0-preview4",
-        "contentHash": "8lE/McOD+JirXsaxYpAHdVTLpljCgESQ/7z4c5sXw6lrkpzYeyRlMQ/sTVNP9k40EIxIY+8FkTupmHcIWsMrvw=="
+        "requested": "[8.1.0, )",
+        "resolved": "8.1.0",
+        "contentHash": "xxOt7lu9a5kB5Fs9RfcxzVlKnhuuPe+w7AXHtmCFtS3oldrsUhEMxHfNulluXSscUUoGxZ0jh55Om12ZP6abHA=="
       },
       "Microsoft.Extensions.Configuration": {
         "type": "Direct",
@@ -1253,18 +1182,13 @@
       },
       "CommunityToolkit.Diagnostics": {
         "type": "Transitive",
-        "resolved": "8.0.0-preview4",
-        "contentHash": "m9L7cNLFqr61wQfUUHAF/LKsq7Ig+aUrOtURIUcGLniMfNDJW+45KuJRp7F4VUHK1gDkNTOUsmrx5b0nj2y2zw=="
+        "resolved": "8.1.0",
+        "contentHash": "R9h5uw8W2ADbmzrJpUJHH7cBpOE2g7jJ0mL/6sJEucfDvTWk3Uq/d4ZgWfVsQTf+MX8wAsWEYsc+UNfeZ3o6LQ=="
       },
       "CommunityToolkit.Maui.Core": {
         "type": "Transitive",
-        "resolved": "1.0.0",
-        "contentHash": "6/+t2fNswAgDQnjofpbZpd/KTbaysdnVOwJ8FWaJW6hq3i8WfsTiZ02WOyZYsdZZRD3GKxR2I5qi0OyjIC/0MA==",
-        "dependencies": {
-          "Microsoft.Maui.Dependencies": "6.0.312",
-          "Microsoft.Maui.Extensions": "6.0.312",
-          "System.Runtime.InteropServices.NFloat.Internal": "6.0.1"
-        }
+        "resolved": "4.0.0",
+        "contentHash": "UBlKxyJisLvbZJvi9o125erFl1bMDSBDvkfgdUFiCt6nTVLA+c3y22LMz1poY7s+zmE2A5iphmqT1SWnkTNWAg=="
       },
       "Microsoft.Extensions.Configuration.Abstractions": {
         "type": "Transitive",
@@ -1293,41 +1217,15 @@
         "resolved": "7.0.0",
         "contentHash": "um1KU5kxcRp3CNuI8o/GrZtD4AIOXDk+RLsytjZ9QPok3ttLUelLKpilVPuaFT3TFjOhSibUAso0odbOaCDj3Q=="
       },
-      "Microsoft.Maui.Dependencies": {
-        "type": "Transitive",
-        "resolved": "6.0.312",
-        "contentHash": "gP9AD+AGTVODdPBFKGazFOynEo/xyZGScs3CKbbgVZUMt+CWWzHXr+0yWPvcIoD8KlNwT2FFoGwMqRYITBkDRA==",
-        "dependencies": {
-          "Microsoft.Maui.Graphics": "6.0.300",
-          "System.Runtime.InteropServices.NFloat.Internal": "6.0.1"
-        }
-      },
-      "Microsoft.Maui.Extensions": {
-        "type": "Transitive",
-        "resolved": "6.0.312",
-        "contentHash": "2TMDnvgIK76x6x0bpkwEDSdGUBETUxPBK6SkoERQ2CfeQa8SG7PJLexLASo+foXf8yV79aeBQ0ttoz6+1OlXEw==",
-        "dependencies": {
-          "Microsoft.Extensions.Configuration": "6.0.1",
-          "Microsoft.Extensions.DependencyInjection": "6.0.0",
-          "Microsoft.Extensions.Logging": "6.0.0",
-          "Microsoft.Extensions.Logging.Abstractions": "6.0.1",
-          "System.Runtime.InteropServices.NFloat.Internal": "6.0.1"
-        }
-      },
       "OneOf": {
         "type": "Transitive",
         "resolved": "3.0.223",
         "contentHash": "YWabiHBFfDdKIO7/TEa72mARVVo5u5FqFnfXuTqjIupMvJlhoH8d0m4uKtczaINuT0vGR1qlXJayeU6bTw5myg=="
       },
-      "System.Runtime.InteropServices.NFloat.Internal": {
-        "type": "Transitive",
-        "resolved": "6.0.1",
-        "contentHash": "vq+81ZqZz9oHV6iWgGXFnxHAyO5xA73nfvDNu5LwymIK294is5bRo3P063VToAbDRyyc0qq/YFRYjHmiD6Cv8Q=="
-      },
       "Michaelvsk.GameDb.Common": {
         "type": "Project",
         "dependencies": {
-          "CommunityToolkit.Diagnostics": "[8.0.0-preview4, )"
+          "CommunityToolkit.Diagnostics": "[8.1.0, )"
         }
       },
       "Michaelvsk.GameDb.Core": {
@@ -1341,7 +1239,7 @@
       "Michaelvsk.GameDb.DAL": {
         "type": "Project",
         "dependencies": {
-          "CommunityToolkit.Diagnostics": "[8.0.0-preview4, )",
+          "CommunityToolkit.Diagnostics": "[8.1.0, )",
           "Michaelvsk.GameDb.Common": "[1.0.0, )",
           "OneOf": "[3.0.223, )"
         }
@@ -1352,25 +1250,24 @@
     "net7.0-maccatalyst16.1/android-x64": {},
     "net7.0-maccatalyst16.1/android-x86": {},
     "net7.0-maccatalyst16.1/iossimulator-x64": {},
+    "net7.0-maccatalyst16.1/maccatalyst-arm64": {},
     "net7.0-maccatalyst16.1/maccatalyst-x64": {},
     "net7.0-maccatalyst16.1/win10-x64": {},
     "net7.0-windows10.0.19041": {
       "CommunityToolkit.Maui": {
         "type": "Direct",
-        "requested": "[1.0.0, )",
-        "resolved": "1.0.0",
-        "contentHash": "FxodTRrBtspZX7Z8rORLCUKnwbFg5PCgzwzSuMjZ9+GjAN3fchaOkZ160924cPvc8olDupgs4+BWoMYouggFKw==",
+        "requested": "[4.0.0, )",
+        "resolved": "4.0.0",
+        "contentHash": "76XJVmDRXoKooARQK7tuwvjAnOwF39nmNoRhHGU1cpElJuKZ4v5Y1QlkSJjxaNaubY4JyplZiDPXK60dsEoPRg==",
         "dependencies": {
-          "CommunityToolkit.Maui.Core": "1.0.0",
-          "Microsoft.Maui.Dependencies": "6.0.312",
-          "Microsoft.Maui.Extensions": "6.0.312"
+          "CommunityToolkit.Maui.Core": "4.0.0"
         }
       },
       "CommunityToolkit.Mvvm": {
         "type": "Direct",
-        "requested": "[8.0.0-preview4, )",
-        "resolved": "8.0.0-preview4",
-        "contentHash": "8lE/McOD+JirXsaxYpAHdVTLpljCgESQ/7z4c5sXw6lrkpzYeyRlMQ/sTVNP9k40EIxIY+8FkTupmHcIWsMrvw=="
+        "requested": "[8.1.0, )",
+        "resolved": "8.1.0",
+        "contentHash": "xxOt7lu9a5kB5Fs9RfcxzVlKnhuuPe+w7AXHtmCFtS3oldrsUhEMxHfNulluXSscUUoGxZ0jh55Om12ZP6abHA=="
       },
       "Microsoft.Extensions.Configuration": {
         "type": "Direct",
@@ -1443,17 +1340,13 @@
       },
       "CommunityToolkit.Diagnostics": {
         "type": "Transitive",
-        "resolved": "8.0.0-preview4",
-        "contentHash": "m9L7cNLFqr61wQfUUHAF/LKsq7Ig+aUrOtURIUcGLniMfNDJW+45KuJRp7F4VUHK1gDkNTOUsmrx5b0nj2y2zw=="
+        "resolved": "8.1.0",
+        "contentHash": "R9h5uw8W2ADbmzrJpUJHH7cBpOE2g7jJ0mL/6sJEucfDvTWk3Uq/d4ZgWfVsQTf+MX8wAsWEYsc+UNfeZ3o6LQ=="
       },
       "CommunityToolkit.Maui.Core": {
         "type": "Transitive",
-        "resolved": "1.0.0",
-        "contentHash": "6/+t2fNswAgDQnjofpbZpd/KTbaysdnVOwJ8FWaJW6hq3i8WfsTiZ02WOyZYsdZZRD3GKxR2I5qi0OyjIC/0MA==",
-        "dependencies": {
-          "Microsoft.Maui.Dependencies": "6.0.312",
-          "Microsoft.Maui.Extensions": "6.0.312"
-        }
+        "resolved": "4.0.0",
+        "contentHash": "UBlKxyJisLvbZJvi9o125erFl1bMDSBDvkfgdUFiCt6nTVLA+c3y22LMz1poY7s+zmE2A5iphmqT1SWnkTNWAg=="
       },
       "Microsoft.Extensions.Configuration.Abstractions": {
         "type": "Transitive",
@@ -1490,28 +1383,6 @@
           "Microsoft.WindowsAppSDK": "1.0.4"
         }
       },
-      "Microsoft.Maui.Dependencies": {
-        "type": "Transitive",
-        "resolved": "6.0.312",
-        "contentHash": "gP9AD+AGTVODdPBFKGazFOynEo/xyZGScs3CKbbgVZUMt+CWWzHXr+0yWPvcIoD8KlNwT2FFoGwMqRYITBkDRA==",
-        "dependencies": {
-          "Microsoft.Graphics.Win2D": "1.0.3.1",
-          "Microsoft.Maui.Graphics": "6.0.300",
-          "Microsoft.Maui.Graphics.Win2D.WinUI.Desktop": "6.0.300",
-          "Microsoft.WindowsAppSDK": "1.0.3"
-        }
-      },
-      "Microsoft.Maui.Extensions": {
-        "type": "Transitive",
-        "resolved": "6.0.312",
-        "contentHash": "2TMDnvgIK76x6x0bpkwEDSdGUBETUxPBK6SkoERQ2CfeQa8SG7PJLexLASo+foXf8yV79aeBQ0ttoz6+1OlXEw==",
-        "dependencies": {
-          "Microsoft.Extensions.Configuration": "6.0.1",
-          "Microsoft.Extensions.DependencyInjection": "6.0.0",
-          "Microsoft.Extensions.Logging": "6.0.0",
-          "Microsoft.Extensions.Logging.Abstractions": "6.0.1"
-        }
-      },
       "OneOf": {
         "type": "Transitive",
         "resolved": "3.0.223",
@@ -1520,7 +1391,7 @@
       "Michaelvsk.GameDb.Common": {
         "type": "Project",
         "dependencies": {
-          "CommunityToolkit.Diagnostics": "[8.0.0-preview4, )"
+          "CommunityToolkit.Diagnostics": "[8.1.0, )"
         }
       },
       "Michaelvsk.GameDb.Core": {
@@ -1534,7 +1405,7 @@
       "Michaelvsk.GameDb.DAL": {
         "type": "Project",
         "dependencies": {
-          "CommunityToolkit.Diagnostics": "[8.0.0-preview4, )",
+          "CommunityToolkit.Diagnostics": "[8.1.0, )",
           "Michaelvsk.GameDb.Common": "[1.0.0, )",
           "OneOf": "[3.0.223, )"
         }
@@ -1617,6 +1488,25 @@
       }
     },
     "net7.0-windows10.0.19041/iossimulator-x64": {
+      "Microsoft.WindowsAppSDK": {
+        "type": "Direct",
+        "requested": "[1.2.221209.1, )",
+        "resolved": "1.2.221209.1",
+        "contentHash": "1Y8KDCmUqytdduubaQhRz6aqaP7YhVSPE/fHeqLMsK3DrV+eBThrqkM6R/8N2lu0mwkNfKSTSAhixrTR72nyWA==",
+        "dependencies": {
+          "Microsoft.Windows.SDK.BuildTools": "10.0.22621.1"
+        }
+      },
+      "Microsoft.Graphics.Win2D": {
+        "type": "Transitive",
+        "resolved": "1.0.4",
+        "contentHash": "PmUO0B+gLdbxy1XCmX6pS57SL08roPKZC3sXKSRH4Qa1nX5RKwIdmmIxSvmV9irN57ABSMtDtWa+qNYnyzB/nw==",
+        "dependencies": {
+          "Microsoft.WindowsAppSDK": "1.0.4"
+        }
+      }
+    },
+    "net7.0-windows10.0.19041/maccatalyst-arm64": {
       "Microsoft.WindowsAppSDK": {
         "type": "Direct",
         "requested": "[1.2.221209.1, )",

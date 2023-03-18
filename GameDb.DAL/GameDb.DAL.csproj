@@ -15,7 +15,7 @@
     <RestorePackagesWithLockFile>true</RestorePackagesWithLockFile>
   </PropertyGroup>
   <ItemGroup>
-    <PackageReference Include="CommunityToolkit.Diagnostics" Version="8.0.0-preview4" />
+    <PackageReference Include="CommunityToolkit.Diagnostics" Version="8.1.0" />
     <PackageReference Include="OneOf" Version="3.0.223" />
   </ItemGroup>
   <ItemGroup>

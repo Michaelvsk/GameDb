@@ -2,7 +2,14 @@
   "plugins": [
     "git-tag",
     "first-time-contributor",
-    "released"
+    "released",
+    [
+      "upload-assets",
+      [
+        "./android-build.zip",
+        "./windows-build.zip"
+      ]
+    ]
   ],
   "owner": "Michaelvsk",
   "repo": "GameDb",

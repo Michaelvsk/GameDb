@@ -11,7 +11,23 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GameDb.Core", "GameDb.Core\
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GameDb.Test", "Tests\GameDb.Models.Test\GameDb.Test.csproj", "{2527D2C5-29F6-4E98-ADEA-555D91A64179}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GameDb.Common", "GameDb.Common\GameDb.Common.csproj", "{ACE85011-D0CE-4264-9FC1-97C10AE52765}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GameDb.Common", "GameDb.Common\GameDb.Common.csproj", "{ACE85011-D0CE-4264-9FC1-97C10AE52765}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{BB0055EA-5B41-451A-929C-7C65C0809C42}"
+	ProjectSection(SolutionItems) = preProject
+		.autorc = .autorc
+		.editorconfig = .editorconfig
+		.env = .env
+		.gitattributes = .gitattributes
+		.gitignore = .gitignore
+		.github\workflows\build-pr.yaml = .github\workflows\build-pr.yaml
+		CHANGELOG.md = CHANGELOG.md
+		dotCoverConfig.xml = dotCoverConfig.xml
+		LICENSE.txt = LICENSE.txt
+		README.md = README.md
+		.github\workflows\release.yaml = .github\workflows\release.yaml
+		.github\workflows\wf-build.yaml = .github\workflows\wf-build.yaml
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

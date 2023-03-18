@@ -10,19 +10,19 @@
       },
       "CommunityToolkit.Diagnostics": {
         "type": "Transitive",
-        "resolved": "8.0.0-preview4",
-        "contentHash": "m9L7cNLFqr61wQfUUHAF/LKsq7Ig+aUrOtURIUcGLniMfNDJW+45KuJRp7F4VUHK1gDkNTOUsmrx5b0nj2y2zw=="
+        "resolved": "8.1.0",
+        "contentHash": "R9h5uw8W2ADbmzrJpUJHH7cBpOE2g7jJ0mL/6sJEucfDvTWk3Uq/d4ZgWfVsQTf+MX8wAsWEYsc+UNfeZ3o6LQ=="
       },
       "Michaelvsk.GameDb.Common": {
         "type": "Project",
         "dependencies": {
-          "CommunityToolkit.Diagnostics": "[8.0.0-preview4, )"
+          "CommunityToolkit.Diagnostics": "[8.1.0, )"
         }
       },
       "Michaelvsk.GameDb.DAL": {
         "type": "Project",
         "dependencies": {
-          "CommunityToolkit.Diagnostics": "[8.0.0-preview4, )",
+          "CommunityToolkit.Diagnostics": "[8.1.0, )",
           "Michaelvsk.GameDb.Common": "[1.0.0, )",
           "OneOf": "[3.0.223, )"
         }
