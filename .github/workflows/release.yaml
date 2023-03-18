@@ -28,11 +28,11 @@ jobs:
       - name: Install auto versioning
         run: >
           npm install --global
-          auto@10.37.1
-          @auto-it/released@10.37.1
-          @auto-it/git-tag@10.37.1
-          @auto-it/first-time-contributor@10.37.1
-          @auto-it/upload-assets@10.37.1
+          auto@10.43.0
+          @auto-it/released@10.43.0
+          @auto-it/git-tag@10.43.0
+          @auto-it/first-time-contributor@10.43.0
+          @auto-it/upload-assets@10.43.0
 
       # dotnet version relies on .NET Core 2.1 (TODO maybe fork project dotnet version as .NET 2.1 reached EOL)
       - uses: actions/setup-dotnet@v3
@@ -63,8 +63,8 @@ jobs:
               echo "Extracted version number is: ${VERSION_NO}"
               echo "git status:"
               git status
-              git commit -a -m "chore(release): Bump assembly versions ${VERSION_NO} [skip ci]"
-              auto changelog
+              auto changelog --no-git-commit
+              git commit -a -m "chore(release): Release version ${VERSION_NO} [skip ci]"
 
               echo "version=${VERSION_NO}" >> "$GITHUB_OUTPUT"
               echo "commit=`git rev-parse --verify HEAD`" >> "$GITHUB_OUTPUT"
@@ -111,11 +111,11 @@ jobs:
       - name: Install auto versioning
         run: >
           npm install --global
-          auto@10.37.1
-          @auto-it/released@10.37.1
-          @auto-it/git-tag@10.37.1
-          @auto-it/first-time-contributor@10.37.1
-          @auto-it/upload-assets@10.37.1
+          auto@10.43.0
+          @auto-it/released@10.43.0
+          @auto-it/git-tag@10.43.0
+          @auto-it/first-time-contributor@10.43.0
+          @auto-it/upload-assets@10.43.0
 
       - uses: actions/download-artifact@v3
         with:
