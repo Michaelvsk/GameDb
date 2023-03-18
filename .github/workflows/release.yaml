@@ -52,7 +52,9 @@ jobs:
           if [ ! -z "$VERSION" ]; then
             dotnet version $VERSION
             if VERSION_NO=$(xmlstarlet  sel -t -m '/Project/PropertyGroup/AssemblyVersion' -v . < ./GameDb/GameDb.csproj 2>&1); then
-              echo "Extracted version number is ${VERSION_NO}"
+              echo "Extracted version number is: ${VERSION_NO}"
+              echo "git status:"
+              git status
               git commit -a -m "chore(release): $VERSION_NO [skip ci]"
             else
               echo "Extracting version from csproj file failed. Error: ${VERSION_NO}"
@@ -98,13 +100,21 @@ jobs:
       - uses: actions/download-artifact@v3
         with:
           name: android-build
-          path: artifact
+          path: android-artifact
 
       - uses: actions/download-artifact@v3
         with:
           name: windows-build
-          path: artifact
-
+          path: windows-artifact
+      
       - name: Check Artifact folder
-        working-directory: artifact
         run: tree 
+
+      - name: ZIP Windows Build
+        run: zip -r -9 windows-build.zip windows-artifact
+
+      - name: ZIP Android Build
+        run: zip -r -9 android-build.zip android-artifact
+
+      - name: Testing release
+        run: auto shipit --only-graduate-with-release-label --dry-run

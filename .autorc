@@ -6,7 +6,8 @@
     [
       "upload-assets",
       [
-        "./artifact/**/*"
+        "./android-build.zip",
+        "./windows-build.zip"
       ]
     ]
   ],
