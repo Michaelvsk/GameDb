@@ -6,8 +6,8 @@
     [
       "upload-assets",
       [
-        "./android-build.zip",
-        "./windows-build.zip"
+        "../android-build.zip",
+        "../windows-build.zip"
       ]
     ]
   ],
