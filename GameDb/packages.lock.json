@@ -986,6 +986,7 @@
     "net7.0-android33.0/android-x64": {},
     "net7.0-android33.0/android-x86": {},
     "net7.0-android33.0/iossimulator-x64": {},
+    "net7.0-android33.0/maccatalyst-arm64": {},
     "net7.0-android33.0/maccatalyst-x64": {},
     "net7.0-android33.0/win10-x64": {},
     "net7.0-ios16.1": {
@@ -1117,6 +1118,7 @@
     "net7.0-ios16.1/android-x64": {},
     "net7.0-ios16.1/android-x86": {},
     "net7.0-ios16.1/iossimulator-x64": {},
+    "net7.0-ios16.1/maccatalyst-arm64": {},
     "net7.0-ios16.1/maccatalyst-x64": {},
     "net7.0-ios16.1/win10-x64": {},
     "net7.0-maccatalyst16.1": {
@@ -1248,6 +1250,7 @@
     "net7.0-maccatalyst16.1/android-x64": {},
     "net7.0-maccatalyst16.1/android-x86": {},
     "net7.0-maccatalyst16.1/iossimulator-x64": {},
+    "net7.0-maccatalyst16.1/maccatalyst-arm64": {},
     "net7.0-maccatalyst16.1/maccatalyst-x64": {},
     "net7.0-maccatalyst16.1/win10-x64": {},
     "net7.0-windows10.0.19041": {
@@ -1485,6 +1488,25 @@
       }
     },
     "net7.0-windows10.0.19041/iossimulator-x64": {
+      "Microsoft.WindowsAppSDK": {
+        "type": "Direct",
+        "requested": "[1.2.221209.1, )",
+        "resolved": "1.2.221209.1",
+        "contentHash": "1Y8KDCmUqytdduubaQhRz6aqaP7YhVSPE/fHeqLMsK3DrV+eBThrqkM6R/8N2lu0mwkNfKSTSAhixrTR72nyWA==",
+        "dependencies": {
+          "Microsoft.Windows.SDK.BuildTools": "10.0.22621.1"
+        }
+      },
+      "Microsoft.Graphics.Win2D": {
+        "type": "Transitive",
+        "resolved": "1.0.4",
+        "contentHash": "PmUO0B+gLdbxy1XCmX6pS57SL08roPKZC3sXKSRH4Qa1nX5RKwIdmmIxSvmV9irN57ABSMtDtWa+qNYnyzB/nw==",
+        "dependencies": {
+          "Microsoft.WindowsAppSDK": "1.0.4"
+        }
+      }
+    },
+    "net7.0-windows10.0.19041/maccatalyst-arm64": {
       "Microsoft.WindowsAppSDK": {
         "type": "Direct",
         "requested": "[1.2.221209.1, )",

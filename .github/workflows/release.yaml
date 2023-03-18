@@ -1,5 +1,5 @@
 name: Release
-concurrency: release
+concurrency: ${{ github.ref }}
 
 on:
   workflow_dispatch:
@@ -7,9 +7,12 @@ on:
     branches: [ main ]
 
 jobs:
-  bump-version:
+  versioning:
     name: Bump Version
     runs-on: ubuntu-latest
+    outputs:
+      version: ${{ steps.versioning.outputs.version }}
+      commit: ${{ steps.versioning.outputs.commit }}
     steps:
       - uses: actions/checkout@v3
         with:
@@ -60,7 +63,10 @@ jobs:
               echo "Extracted version number is: ${VERSION_NO}"
               echo "git status:"
               git status
-              git commit -a -m "chore(release): $VERSION_NO [skip ci]"
+              git commit -a -m "chore(release): ${VERSION_NO} [skip ci]"
+
+              echo "version=${VERSION_NO}" >> "$GITHUB_OUTPUT"
+              echo "commit=`git rev-parse --verify HEAD`" >> "$GITHUB_OUTPUT"
             else
               echo "Extracting version from csproj file failed. Error: ${VERSION_NO}"
               exit 1
@@ -73,7 +79,7 @@ jobs:
 
   build:
     uses: ./.github/workflows/wf-build.yaml
-    needs: bump-version
+    needs: versioning
     name: Build .NET MAUI App
     with:
       append-build-number: false
@@ -82,12 +88,11 @@ jobs:
 
   release:
     name: Create Release
-    needs: build
+    needs: [versioning, build]
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
         with:
-          fetch-depth: 0
           token: ${{ secrets.GH_ADMIN_TOKEN }}
 
       - name: Setup GIT
@@ -126,3 +131,5 @@ jobs:
 
       - name: Testing release
         run: auto shipit --only-graduate-with-release-label --dry-run
+        env:
+         GH_TOKEN: ${{secrets.GH_ADMIN_TOKEN}}

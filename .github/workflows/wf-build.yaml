@@ -8,6 +8,11 @@ on:
         required: false
         type: boolean
         default: true
+      ref:
+        description: The git ref to checkout.
+        required: false
+        type: string
+        default: ${{ github.ref }}
     secrets:
       SONAR_TOKEN:
         required: true
@@ -27,6 +32,7 @@ jobs:
       - uses: actions/checkout@v3
         with:
           fetch-depth: 0  # Shallow clones should be disabled for a better relevancy of analysis
+          ref: ${{ inputs.ref }}
 
       # Versioning
       - name: Install .NET Core
