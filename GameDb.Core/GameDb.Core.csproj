@@ -4,7 +4,7 @@
     <Company>Michaelvsk</Company>
     <Authors>Michael Keller</Authors>
     <Product>GameDb</Product>
-    <AssemblyVersion>0.1.1</AssemblyVersion>
+    <AssemblyVersion>0.2.0</AssemblyVersion>
   </PropertyGroup>
   <PropertyGroup>
     <TargetFramework>net7.0</TargetFramework>
