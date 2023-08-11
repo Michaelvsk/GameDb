@@ -56,9 +56,9 @@
       },
       "Microsoft.Maui.Graphics": {
         "type": "Direct",
-        "requested": "[7.0.59, )",
-        "resolved": "7.0.59",
-        "contentHash": "a5eOfzqeHeERBmQ6g3uU+p4GEwHtBXxQ1s58XIiHCMf/WGCn5HX9z17VLUz6qr2ELVf/BbZ9bFUzVef+kbxkvQ=="
+        "requested": "[7.0.86, )",
+        "resolved": "7.0.86",
+        "contentHash": "v0VB9NhVrJarOzl7BHs2LaFQE+syKQ8o1Wbs+I4CGxmQO4cosmoFPUa0ogp1oaJe8Tazu504+P8JDy8fhDsSKQ=="
       },
       "Xamarin.Android.Glide": {
         "type": "Direct",
@@ -986,7 +986,6 @@
     "net7.0-android33.0/android-x64": {},
     "net7.0-android33.0/android-x86": {},
     "net7.0-android33.0/iossimulator-x64": {},
-    "net7.0-android33.0/maccatalyst-arm64": {},
     "net7.0-android33.0/maccatalyst-x64": {},
     "net7.0-android33.0/win10-x64": {},
     "net7.0-ios16.1": {
@@ -1044,9 +1043,9 @@
       },
       "Microsoft.Maui.Graphics": {
         "type": "Direct",
-        "requested": "[7.0.59, )",
-        "resolved": "7.0.59",
-        "contentHash": "a5eOfzqeHeERBmQ6g3uU+p4GEwHtBXxQ1s58XIiHCMf/WGCn5HX9z17VLUz6qr2ELVf/BbZ9bFUzVef+kbxkvQ=="
+        "requested": "[7.0.86, )",
+        "resolved": "7.0.86",
+        "contentHash": "v0VB9NhVrJarOzl7BHs2LaFQE+syKQ8o1Wbs+I4CGxmQO4cosmoFPUa0ogp1oaJe8Tazu504+P8JDy8fhDsSKQ=="
       },
       "CommunityToolkit.Diagnostics": {
         "type": "Transitive",
@@ -1118,7 +1117,6 @@
     "net7.0-ios16.1/android-x64": {},
     "net7.0-ios16.1/android-x86": {},
     "net7.0-ios16.1/iossimulator-x64": {},
-    "net7.0-ios16.1/maccatalyst-arm64": {},
     "net7.0-ios16.1/maccatalyst-x64": {},
     "net7.0-ios16.1/win10-x64": {},
     "net7.0-maccatalyst16.1": {
@@ -1176,9 +1174,9 @@
       },
       "Microsoft.Maui.Graphics": {
         "type": "Direct",
-        "requested": "[7.0.59, )",
-        "resolved": "7.0.59",
-        "contentHash": "a5eOfzqeHeERBmQ6g3uU+p4GEwHtBXxQ1s58XIiHCMf/WGCn5HX9z17VLUz6qr2ELVf/BbZ9bFUzVef+kbxkvQ=="
+        "requested": "[7.0.86, )",
+        "resolved": "7.0.86",
+        "contentHash": "v0VB9NhVrJarOzl7BHs2LaFQE+syKQ8o1Wbs+I4CGxmQO4cosmoFPUa0ogp1oaJe8Tazu504+P8JDy8fhDsSKQ=="
       },
       "CommunityToolkit.Diagnostics": {
         "type": "Transitive",
@@ -1250,7 +1248,6 @@
     "net7.0-maccatalyst16.1/android-x64": {},
     "net7.0-maccatalyst16.1/android-x86": {},
     "net7.0-maccatalyst16.1/iossimulator-x64": {},
-    "net7.0-maccatalyst16.1/maccatalyst-arm64": {},
     "net7.0-maccatalyst16.1/maccatalyst-x64": {},
     "net7.0-maccatalyst16.1/win10-x64": {},
     "net7.0-windows10.0.19041": {
@@ -1308,18 +1305,18 @@
       },
       "Microsoft.Maui.Graphics": {
         "type": "Direct",
-        "requested": "[7.0.59, )",
-        "resolved": "7.0.59",
-        "contentHash": "a5eOfzqeHeERBmQ6g3uU+p4GEwHtBXxQ1s58XIiHCMf/WGCn5HX9z17VLUz6qr2ELVf/BbZ9bFUzVef+kbxkvQ=="
+        "requested": "[7.0.86, )",
+        "resolved": "7.0.86",
+        "contentHash": "v0VB9NhVrJarOzl7BHs2LaFQE+syKQ8o1Wbs+I4CGxmQO4cosmoFPUa0ogp1oaJe8Tazu504+P8JDy8fhDsSKQ=="
       },
       "Microsoft.Maui.Graphics.Win2D.WinUI.Desktop": {
         "type": "Direct",
-        "requested": "[7.0.59, )",
-        "resolved": "7.0.59",
-        "contentHash": "ExNm2DreudUpAESDCpmFqruINxrjgpNOl+80GjCp/yoFv6QX3exYBmrFZ2zWSb7RrvWJnBPN9SaOHbkpT2+x2A==",
+        "requested": "[7.0.86, )",
+        "resolved": "7.0.86",
+        "contentHash": "o9nXvM81cu9PbdDBFcybMyM2hIgb0a8CLu3ZwD0cJrI01ujLoltwkqmlvOrVxgAwL9RvoLIjN51WFjPwvbPrkw==",
         "dependencies": {
           "Microsoft.Graphics.Win2D": "1.0.4",
-          "Microsoft.Maui.Graphics": "7.0.59",
+          "Microsoft.Maui.Graphics": "7.0.86",
           "Microsoft.WindowsAppSDK": "1.2.221209.1"
         }
       },
@@ -1488,25 +1485,6 @@
       }
     },
     "net7.0-windows10.0.19041/iossimulator-x64": {
-      "Microsoft.WindowsAppSDK": {
-        "type": "Direct",
-        "requested": "[1.2.221209.1, )",
-        "resolved": "1.2.221209.1",
-        "contentHash": "1Y8KDCmUqytdduubaQhRz6aqaP7YhVSPE/fHeqLMsK3DrV+eBThrqkM6R/8N2lu0mwkNfKSTSAhixrTR72nyWA==",
-        "dependencies": {
-          "Microsoft.Windows.SDK.BuildTools": "10.0.22621.1"
-        }
-      },
-      "Microsoft.Graphics.Win2D": {
-        "type": "Transitive",
-        "resolved": "1.0.4",
-        "contentHash": "PmUO0B+gLdbxy1XCmX6pS57SL08roPKZC3sXKSRH4Qa1nX5RKwIdmmIxSvmV9irN57ABSMtDtWa+qNYnyzB/nw==",
-        "dependencies": {
-          "Microsoft.WindowsAppSDK": "1.0.4"
-        }
-      }
-    },
-    "net7.0-windows10.0.19041/maccatalyst-arm64": {
       "Microsoft.WindowsAppSDK": {
         "type": "Direct",
         "requested": "[1.2.221209.1, )",
