@@ -111,11 +111,11 @@ jobs:
       - name: Install auto versioning
         run: >
           npm install --global
-          auto@10.43.0
-          @auto-it/released@10.43.0
-          @auto-it/git-tag@10.43.0
-          @auto-it/first-time-contributor@10.43.0
-          @auto-it/upload-assets@10.43.0
+          auto@11.2.0
+          @auto-it/released@11.2.0
+          @auto-it/git-tag@11.2.0
+          @auto-it/first-time-contributor@11.2.0
+          @auto-it/upload-assets@11.2.0
 
       - uses: actions/download-artifact@v3
         with:
