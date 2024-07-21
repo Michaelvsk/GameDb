@@ -28,11 +28,11 @@ jobs:
       - name: Install auto versioning
         run: >
           npm install --global
-          auto@10.43.0
-          @auto-it/released@10.43.0
-          @auto-it/git-tag@10.43.0
-          @auto-it/first-time-contributor@10.43.0
-          @auto-it/upload-assets@10.43.0
+          auto@11.2.0
+          @auto-it/released@11.2.0
+          @auto-it/git-tag@11.2.0
+          @auto-it/first-time-contributor@11.2.0
+          @auto-it/upload-assets@11.2.0
 
       # dotnet version relies on .NET Core 2.1 (TODO maybe fork project dotnet version as .NET 2.1 reached EOL)
       - uses: actions/setup-dotnet@v3
