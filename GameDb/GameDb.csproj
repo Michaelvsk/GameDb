@@ -1,9 +1,10 @@
-﻿<Project Sdk="Microsoft.NET.Sdk">
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
     <Company>Michaelvsk</Company>
     <Authors>Michael Keller</Authors>
     <Product>GameDb</Product>
-    <AssemblyVersion>0.2.0</AssemblyVersion>
+    <AssemblyVersion>0.3.0</AssemblyVersion>
     <SupportedOSPlatformVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'windows'">10.0.19041.0</SupportedOSPlatformVersion>
   </PropertyGroup>
   <PropertyGroup>
