@@ -1,6 +1,7 @@
 ﻿using System.Diagnostics.CodeAnalysis;
 
 using Foundation;
+using Microsoft.Maui;
 
 namespace Michaelvsk.GameDb.Platforms.MacCatalyst;
 
